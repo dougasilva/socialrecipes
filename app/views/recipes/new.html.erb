@@ -1,0 +1,16 @@
+<h1>CADASTRAR RECEITA</h1>
+<p class="error"><%= flash[:error] %></p>
+<%= simple_form_for @recipe, html: {multipart: true} do |f| %>
+ <%= f.input :name, label: 'Receita:' %>
+ <%= f.input :kitchen, label: 'Cozinha:' %>
+ <%= f.input :type_of_food, label: 'Tipo de Comida:' %>
+ <%= f.input :preference, label: 'Preferência de Comida:' %>
+ <%= f.input :amount, label: 'Serve:' %>
+ <%= f.input :time_preparation, label: 'Tempo de Preparo:' %>
+ <%= f.input :difficulty, collection: ['Difícil', 'Médio', 'Fácil'],
+             label: 'Dificuldade:' %>
+ <%= f.input :ingredients, label: 'Ingredientes:' %>
+ <%= f.input :preparation, label: 'Passo a Passo:' %>
+ <%= f.input :foto, label: 'Selecione uma foto:', as: :file %>
+ <%= f.button :submit, value: 'Cadastrar Receita' %>
+<% end %>
