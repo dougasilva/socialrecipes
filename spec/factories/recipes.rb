@@ -3,9 +3,9 @@ FactoryGirl.define do
     name 'Pudim de Leite'
     kitchen 'Portuguesa'
     type_of_food 'Sobremesa'
-    food_preference 'Sem gluten'
-    amount_people 5
-    preparation_time 45
+    preference 'Sem gluten'
+    amount 5
+    time_preparation 45
     difficulty 'Médio'
     ingredients '1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas'
     preparation 'Bata todos os ingredientes no liquidificador, após coloque o

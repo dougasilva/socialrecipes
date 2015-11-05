@@ -1,0 +1,11 @@
+<h1>RECEITAS</h1>
+<%if @recipes.any? %>
+  <% @recipes.each do |recipe| %>
+    <%= link_to recipe.name, recipe %><br>
+    <%= recipe.preference %><br>
+    <%= recipe.kitchen %><br>
+    <%= recipe.difficulty %><br>
+  <% end %>
+<% else %>
+  <p>Sem receitas cadastradas.</p>
+<% end %>

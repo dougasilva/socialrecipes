@@ -4271,3 +4271,367 @@ Processing by RecipesController#create as HTML
   Rendered recipes/new.html.erb within layouts/application (27.4ms)
 Completed 200 OK in 49ms (Views: 31.8ms | ActiveRecord: 0.6ms)
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 17:09:13 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (205.4ms)
+Completed 200 OK in 647ms (Views: 606.5ms | ActiveRecord: 0.7ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-05 17:09:14 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "type_of_food"=>"Sobremesa", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x000000067b9db8 @tempfile=#<Tempfile:/tmp/RackMultipart20151105-8314-vu3z7d.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8314-b8s5ov.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8314-yt0rpk.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8314-yt0rpk.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8314-yt0rpk.JPG[0]' -auto-orient -resize "300x300>" '/tmp/b6205a3006db92ca2315d97a5abc8c4c20151105-8314-pv1594'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8314-yt0rpk.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8314-yt0rpk.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8314-yt0rpk.JPG[0]' -auto-orient -resize "100x100>" '/tmp/b6205a3006db92ca2315d97a5abc8c4c20151105-8314-bzk6wy'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8314-13v0etp.JPG'
+  [1m[35mSQL (4.7ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Sobremesa"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-05 19:09:14.277101"], ["created_at", "2015-11-05 19:09:14.823144"], ["updated_at", "2015-11-05 19:09:14.823144"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/1
+Completed 302 Found in 609ms (ActiveRecord: 5.3ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-05 17:09:14 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 37ms (Views: 9.0ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 17:09:14 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-05 17:09:14 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen"=>"", "type_of_food"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered recipes/new.html.erb within layouts/application (43.2ms)
+Completed 200 OK in 89ms (Views: 58.5ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.8ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Sobremesa"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-05 19:09:15.092917"], ["created_at", "2015-11-05 19:09:15.094424"], ["updated_at", "2015-11-05 19:09:15.094424"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (14.0ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Picadinho de Carne"], ["kitchen", "Brasileira"], ["type_of_food", "Carnes"], ["preference", "Bovino"], ["amount", 5], ["time_preparation", 75], ["difficulty", "Médio"], ["ingredients", "200 g de carne\n                              (patinho, alcatra) em tirinhas, 2 linguiças de\n                              churrasco em pedaços, 1 gomo de calabresa em\n                              pedaços, 200 g de bacon em pedaços, 2 pimentões\n                              em tirinhas, azeitona sem caroço, molho de tomate,\n                              milho verde, óleo"], ["preparation", "Frite a carne,\n                              a linguiça, a calabresa e o bacon separados;\n                              Doure os pimentões com óleo (ou da forma que\n                              preferir); Acrescente o bacon, mexendo por mais\n                              uns 3 minutos; Junte a carne, a linguiça e a\n                              calabresa mexendo por 1 minuto; Acrescente o molho\n                              de tomate, azeitona e milho verde mexendo\n                              por 2 minutos"], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-05 19:09:15.104930"], ["created_at", "2015-11-05 19:09:15.106210"], ["updated_at", "2015-11-05 19:09:15.106210"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 17:10:44 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (123.6ms)
+Completed 200 OK in 486ms (Views: 445.6ms | ActiveRecord: 0.9ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-05 17:10:45 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "type_of_food"=>"Sobremesa", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x00000007f071a0 @tempfile=#<Tempfile:/tmp/RackMultipart20151105-8356-1j7vbaa.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8356-17pn58b.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8356-og03ua.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8356-og03ua.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8356-og03ua.JPG[0]' -auto-orient -resize "300x300>" '/tmp/ad23671ff2f8a0cfc0a299a03d4a6c6820151105-8356-1fq5eq9'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8356-og03ua.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8356-og03ua.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8356-og03ua.JPG[0]' -auto-orient -resize "100x100>" '/tmp/ad23671ff2f8a0cfc0a299a03d4a6c6820151105-8356-zaeohd'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8356-15cjcw5.JPG'
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Sobremesa"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-05 19:10:45.391252"], ["created_at", "2015-11-05 19:10:45.517187"], ["updated_at", "2015-11-05 19:10:45.517187"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/1
+Completed 302 Found in 162ms (ActiveRecord: 1.4ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-05 17:10:45 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 20ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 17:10:45 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-05 17:10:45 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen"=>"", "type_of_food"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered recipes/new.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 53ms (Views: 34.4ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Sobremesa"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-05 19:10:45.702057"], ["created_at", "2015-11-05 19:10:45.703526"], ["updated_at", "2015-11-05 19:10:45.703526"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Picadinho de Carne"], ["kitchen", "Brasileira"], ["type_of_food", "Carnes"], ["preference", "Bovino"], ["amount", 5], ["time_preparation", 75], ["difficulty", "Médio"], ["ingredients", "200 g de carne\n                              (patinho, alcatra) em tirinhas, 2 linguiças de\n                              churrasco em pedaços, 1 gomo de calabresa em\n                              pedaços, 200 g de bacon em pedaços, 2 pimentões\n                              em tirinhas, azeitona sem caroço, molho de tomate,\n                              milho verde, óleo"], ["preparation", "Frite a carne,\n                              a linguiça, a calabresa e o bacon separados;\n                              Doure os pimentões com óleo (ou da forma que\n                              preferir); Acrescente o bacon, mexendo por mais\n                              uns 3 minutos; Junte a carne, a linguiça e a\n                              calabresa mexendo por 1 minuto; Acrescente o molho\n                              de tomate, azeitona e milho verde mexendo\n                              por 2 minutos"], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-05 19:10:45.717967"], ["created_at", "2015-11-05 19:10:45.720525"], ["updated_at", "2015-11-05 19:10:45.720525"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 17:12:46 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (120.0ms)
+Completed 200 OK in 471ms (Views: 431.6ms | ActiveRecord: 0.9ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-05 17:12:46 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "type_of_food"=>"Sobremesa", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x00000007330a48 @tempfile=#<Tempfile:/tmp/RackMultipart20151105-8405-ovs6il.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8405-1eg3qdh.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8405-1mrsw5r.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8405-1mrsw5r.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8405-1mrsw5r.JPG[0]' -auto-orient -resize "300x300>" '/tmp/572be0221ecff254aec688f88167260d20151105-8405-1opo43x'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8405-1mrsw5r.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8405-1mrsw5r.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8405-1mrsw5r.JPG[0]' -auto-orient -resize "100x100>" '/tmp/572be0221ecff254aec688f88167260d20151105-8405-19jmglh'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8405-rxmidk.JPG'
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Sobremesa"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-05 19:12:46.866342"], ["created_at", "2015-11-05 19:12:46.982400"], ["updated_at", "2015-11-05 19:12:46.982400"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/1
+Completed 302 Found in 150ms (ActiveRecord: 1.2ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-05 17:12:47 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 20ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 17:12:47 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-05 17:12:47 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen"=>"", "type_of_food"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered recipes/new.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 50ms (Views: 33.5ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Sobremesa"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-05 19:12:47.157407"], ["created_at", "2015-11-05 19:12:47.159963"], ["updated_at", "2015-11-05 19:12:47.159963"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Picadinho de Carne"], ["kitchen", "Brasileira"], ["type_of_food", "Carnes"], ["preference", "Bovino"], ["amount", 5], ["time_preparation", 75], ["difficulty", "Médio"], ["ingredients", "200 g de carne\n                              (patinho, alcatra) em tirinhas, 2 linguiças de\n                              churrasco em pedaços, 1 gomo de calabresa em\n                              pedaços, 200 g de bacon em pedaços, 2 pimentões\n                              em tirinhas, azeitona sem caroço, molho de tomate,\n                              milho verde, óleo"], ["preparation", "Frite a carne,\n                              a linguiça, a calabresa e o bacon separados;\n                              Doure os pimentões com óleo (ou da forma que\n                              preferir); Acrescente o bacon, mexendo por mais\n                              uns 3 minutos; Junte a carne, a linguiça e a\n                              calabresa mexendo por 1 minuto; Acrescente o molho\n                              de tomate, azeitona e milho verde mexendo\n                              por 2 minutos"], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-05 19:12:47.173064"], ["created_at", "2015-11-05 19:12:47.174311"], ["updated_at", "2015-11-05 19:12:47.174311"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 17:14:52 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (122.8ms)
+Completed 200 OK in 476ms (Views: 435.8ms | ActiveRecord: 0.8ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-05 17:14:52 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "type_of_food"=>"Sobremesa", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x00000007453ab0 @tempfile=#<Tempfile:/tmp/RackMultipart20151105-8444-1gp27jb.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8444-1kzect3.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8444-1fk5g0g.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8444-1fk5g0g.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8444-1fk5g0g.JPG[0]' -auto-orient -resize "300x300>" '/tmp/34abc8d42fcfd0d292c75d9a343e5f8120151105-8444-1nzy1ja'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8444-1fk5g0g.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8444-1fk5g0g.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8444-1fk5g0g.JPG[0]' -auto-orient -resize "100x100>" '/tmp/34abc8d42fcfd0d292c75d9a343e5f8120151105-8444-1nxvlie'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8444-4hy2hr.JPG'
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Sobremesa"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-05 19:14:53.001949"], ["created_at", "2015-11-05 19:14:53.126415"], ["updated_at", "2015-11-05 19:14:53.126415"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/1
+Completed 302 Found in 159ms (ActiveRecord: 1.3ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-05 17:14:53 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 21ms (Views: 7.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 17:14:53 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-05 17:14:53 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen"=>"", "type_of_food"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered recipes/new.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 63ms (Views: 38.9ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Sobremesa"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-05 19:14:53.325822"], ["created_at", "2015-11-05 19:14:53.327254"], ["updated_at", "2015-11-05 19:14:53.327254"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Picadinho de Carne"], ["kitchen", "Brasileira"], ["type_of_food", "Carnes"], ["preference", "Bovino"], ["amount", 5], ["time_preparation", 75], ["difficulty", "Médio"], ["ingredients", "200 g de carne\n                              (patinho, alcatra) em tirinhas, 2 linguiças de\n                              churrasco em pedaços, 1 gomo de calabresa em\n                              pedaços, 200 g de bacon em pedaços, 2 pimentões\n                              em tirinhas, azeitona sem caroço, molho de tomate,\n                              milho verde, óleo"], ["preparation", "Frite a carne,\n                              a linguiça, a calabresa e o bacon separados;\n                              Doure os pimentões com óleo (ou da forma que\n                              preferir); Acrescente o bacon, mexendo por mais\n                              uns 3 minutos; Junte a carne, a linguiça e a\n                              calabresa mexendo por 1 minuto; Acrescente o molho\n                              de tomate, azeitona e milho verde mexendo\n                              por 2 minutos"], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-05 19:14:53.337459"], ["created_at", "2015-11-05 19:14:53.339727"], ["updated_at", "2015-11-05 19:14:53.339727"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes" for 127.0.0.1 at 2015-11-05 17:14:53 -0200
+Processing by RecipesController#index as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 17:16:47 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (120.3ms)
+Completed 200 OK in 473ms (Views: 433.2ms | ActiveRecord: 0.8ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-05 17:16:48 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "type_of_food"=>"Sobremesa", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x00000007458e70 @tempfile=#<Tempfile:/tmp/RackMultipart20151105-8523-37o9md.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8523-8b345h.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8523-5jfstl.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8523-5jfstl.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8523-5jfstl.JPG[0]' -auto-orient -resize "300x300>" '/tmp/986828d577e609bcc293ab878006b1cb20151105-8523-10lritc'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8523-5jfstl.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8523-5jfstl.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8523-5jfstl.JPG[0]' -auto-orient -resize "100x100>" '/tmp/986828d577e609bcc293ab878006b1cb20151105-8523-1hgc1am'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8523-lkcsgo.JPG'
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Sobremesa"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-05 19:16:48.478632"], ["created_at", "2015-11-05 19:16:48.607773"], ["updated_at", "2015-11-05 19:16:48.607773"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/1
+Completed 302 Found in 169ms (ActiveRecord: 1.4ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-05 17:16:48 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 24ms (Views: 9.1ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 17:16:48 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-05 17:16:48 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen"=>"", "type_of_food"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered recipes/new.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 65ms (Views: 40.6ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Sobremesa"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-05 19:16:48.820556"], ["created_at", "2015-11-05 19:16:48.822889"], ["updated_at", "2015-11-05 19:16:48.822889"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Picadinho de Carne"], ["kitchen", "Brasileira"], ["type_of_food", "Carnes"], ["preference", "Bovino"], ["amount", 5], ["time_preparation", 75], ["difficulty", "Médio"], ["ingredients", "200 g de carne\n                              (patinho, alcatra) em tirinhas, 2 linguiças de\n                              churrasco em pedaços, 1 gomo de calabresa em\n                              pedaços, 200 g de bacon em pedaços, 2 pimentões\n                              em tirinhas, azeitona sem caroço, molho de tomate,\n                              milho verde, óleo"], ["preparation", "Frite a carne,\n                              a linguiça, a calabresa e o bacon separados;\n                              Doure os pimentões com óleo (ou da forma que\n                              preferir); Acrescente o bacon, mexendo por mais\n                              uns 3 minutos; Junte a carne, a linguiça e a\n                              calabresa mexendo por 1 minuto; Acrescente o molho\n                              de tomate, azeitona e milho verde mexendo\n                              por 2 minutos"], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-05 19:16:48.833247"], ["created_at", "2015-11-05 19:16:48.834583"], ["updated_at", "2015-11-05 19:16:48.834583"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes" for 127.0.0.1 at 2015-11-05 17:16:48 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 18:16:44 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (122.2ms)
+Completed 200 OK in 509ms (Views: 469.0ms | ActiveRecord: 0.8ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-05 18:16:44 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "type_of_food"=>"Sobremesa", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x00000007583908 @tempfile=#<Tempfile:/tmp/RackMultipart20151105-8828-g2pw8b.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8828-1mdx3ex.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8828-1jq66hm.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8828-1jq66hm.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8828-1jq66hm.JPG[0]' -auto-orient -resize "300x300>" '/tmp/0212c0c03bda8029bf2c0b56cd9b4afa20151105-8828-2nh24e'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8828-1jq66hm.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8828-1jq66hm.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8828-1jq66hm.JPG[0]' -auto-orient -resize "100x100>" '/tmp/0212c0c03bda8029bf2c0b56cd9b4afa20151105-8828-1sktbjt'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-8828-18ubz3n.JPG'
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Sobremesa"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-05 20:16:44.801425"], ["created_at", "2015-11-05 20:16:44.917022"], ["updated_at", "2015-11-05 20:16:44.917022"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/1
+Completed 302 Found in 149ms (ActiveRecord: 1.2ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-05 18:16:44 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 20ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 18:16:44 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-05 18:16:45 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen"=>"", "type_of_food"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered recipes/new.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 61ms (Views: 40.1ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Sobremesa"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-05 20:16:45.114563"], ["created_at", "2015-11-05 20:16:45.115981"], ["updated_at", "2015-11-05 20:16:45.115981"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Picadinho de Carne"], ["kitchen", "Brasileira"], ["type_of_food", "Carnes"], ["preference", "Bovino"], ["amount", 5], ["time_preparation", 75], ["difficulty", "Médio"], ["ingredients", "200 g de carne\n                              (patinho, alcatra) em tirinhas, 2 linguiças de\n                              churrasco em pedaços, 1 gomo de calabresa em\n                              pedaços, 200 g de bacon em pedaços, 2 pimentões\n                              em tirinhas, azeitona sem caroço, molho de tomate,\n                              milho verde, óleo"], ["preparation", "Frite a carne,\n                              a linguiça, a calabresa e o bacon separados;\n                              Doure os pimentões com óleo (ou da forma que\n                              preferir); Acrescente o bacon, mexendo por mais\n                              uns 3 minutos; Junte a carne, a linguiça e a\n                              calabresa mexendo por 1 minuto; Acrescente o molho\n                              de tomate, azeitona e milho verde mexendo\n                              por 2 minutos"], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-05 20:16:45.126800"], ["created_at", "2015-11-05 20:16:45.129229"], ["updated_at", "2015-11-05 20:16:45.129229"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes" for 127.0.0.1 at 2015-11-05 18:16:45 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Sobremesa"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-05 20:16:45.162463"], ["created_at", "2015-11-05 20:16:45.164607"], ["updated_at", "2015-11-05 20:16:45.164607"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes" for 127.0.0.1 at 2015-11-05 18:16:45 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 1.3ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-05 18:16:45 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.1ms)
+Started GET "/recipes" for 127.0.0.1 at 2015-11-05 18:16:45 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
