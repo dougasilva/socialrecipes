@@ -1,0 +1,11 @@
+<h1>RECEITAS</h1>
+<%= @recipe.name %>
+<%= @recipe.kitchen %>
+<%= @recipe.type_of_food %>
+<%= @recipe.preference %>
+<%= "#{@recipe.amount} pessoas" %>
+<%= "#{@recipe.time_preparation} minutos" %>
+<%= @recipe.difficulty %>
+<%= @recipe.ingredients %>
+<%= @recipe.preparation %>
+<%= image_tag @recipe.foto.url(:thumb) %>

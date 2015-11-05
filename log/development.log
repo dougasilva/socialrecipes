@@ -1,0 +1,1038 @@
+  [1m[36m (75.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (90.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRecipes (20151031215723)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (5.5ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "kind_of_food" varchar, "food_preference" varchar, "amount_people" integer, "preparation_time" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151031215723"]]
+  [1m[35m (77.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (98.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (98.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRecipes (20151031215723)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "kind_of_food" varchar, "food_preference" varchar, "amount_people" integer, "preparation_time" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151031215723"]]
+  [1m[35m (76.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-01 10:37:09 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (142.2ms)
+Completed 200 OK in 1446ms (Views: 1408.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-01 10:37:10 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-01 10:37:11 -0200
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-01 10:38:05 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GZvjPbOBusf1KZr8Q+GZaT1BaY/3Y0pJIk9nntEyqpk2TEORM+TnscZ+Qvq2zoXvEWTFuz0eMvvAlrIQRpW8WQ==", "recipe"=>{"name"=>"", "kitchen"=>"", "kind_of_food"=>"", "food_preference"=>"", "amount_people"=>"", "preparation_time"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar receita"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  Rendered recipes/new.html.erb within layouts/application (69.9ms)
+Completed 200 OK in 171ms (Views: 144.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-01 10:48:20 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GZvjPbOBusf1KZr8Q+GZaT1BaY/3Y0pJIk9nntEyqpk2TEORM+TnscZ+Qvq2zoXvEWTFuz0eMvvAlrIQRpW8WQ==", "recipe"=>{"name"=>"", "kitchen"=>"", "kind_of_food"=>"", "food_preference"=>"", "amount_people"=>"", "preparation_time"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar receita"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered recipes/new.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.3ms)
+
+SyntaxError (/home/douglas/workspace/socialrecipes/app/views/recipes/new.html.erb:9: syntax error, unexpected ',', expecting =>
+...ollection: 'Dificil', 'Médio', 'Fácil', label: 'Dificuldad...
+...                               ^
+/home/douglas/workspace/socialrecipes/app/views/recipes/new.html.erb:9: syntax error, unexpected ',', expecting ')'
+... 'Dificil', 'Médio', 'Fácil', label: 'Dificuldade:' );@out...
+...                               ^):
+  app/views/recipes/new.html.erb:9: syntax error, unexpected ',', expecting =>
+  app/views/recipes/new.html.erb:9: syntax error, unexpected ',', expecting ')'
+  app/controllers/recipes_controller.rb:16:in `create'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (32.4ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (88.3ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-01 10:51:17 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GZvjPbOBusf1KZr8Q+GZaT1BaY/3Y0pJIk9nntEyqpk2TEORM+TnscZ+Qvq2zoXvEWTFuz0eMvvAlrIQRpW8WQ==", "recipe"=>{"name"=>"", "kitchen"=>"", "kind_of_food"=>"", "food_preference"=>"", "amount_people"=>"", "preparation_time"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar receita"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  Rendered recipes/new.html.erb within layouts/application (83.4ms)
+Completed 200 OK in 187ms (Views: 170.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-01 10:51:17 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-01 10:51:18 -0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-01 10:51:18 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-01 10:51:18 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-01 10:51:18 -0200
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-01 10:51:33 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 97ms (Views: 96.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-01 10:51:43 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QNHA77QFE1/+m2pIz/qGjRSCH6xFY5fTyhinXHoao0tvBmBDNGBOKc3Msk461ZoLOKezmI8e72EowXLS7b21iw==", "recipe"=>{"name"=>"", "kitchen"=>"", "kind_of_food"=>"", "food_preference"=>"", "amount_people"=>"", "preparation_time"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar receita"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  Rendered recipes/new.html.erb within layouts/application (35.7ms)
+Completed 200 OK in 101ms (Views: 81.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-01 10:53:00 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QNHA77QFE1/+m2pIz/qGjRSCH6xFY5fTyhinXHoao0tvBmBDNGBOKc3Msk461ZoLOKezmI8e72EowXLS7b21iw==", "recipe"=>{"name"=>"", "kitchen"=>"", "kind_of_food"=>"", "food_preference"=>"", "amount_people"=>"", "preparation_time"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar receita"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered recipes/new.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 108ms (Views: 78.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-01 10:53:00 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-01 10:53:00 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-01 10:53:00 -0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-01 10:53:00 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-01 10:53:00 -0200
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-01 11:32:43 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QNHA77QFE1/+m2pIz/qGjRSCH6xFY5fTyhinXHoao0tvBmBDNGBOKc3Msk461ZoLOKezmI8e72EowXLS7b21iw==", "recipe"=>{"name"=>"", "kitchen"=>"", "kind_of_food"=>"", "food_preference"=>"", "amount_people"=>"", "preparation_time"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar receita"}
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  Rendered recipes/new.html.erb within layouts/application (79.5ms)
+Completed 200 OK in 152ms (Views: 129.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-01 11:32:43 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-01 11:32:43 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-01 11:32:43 -0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-01 11:32:43 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-01 11:32:43 -0200
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-01 11:32:45 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zKSl5v3ByLSd0JXE7R/31UpUOdLu1jF+/yCy+oC/CyHjcwVKfaSVwq6HTcIYMOtTZnGV5iSrScwd+Wd0Fxgd4Q==", "recipe"=>{"name"=>"", "kitchen"=>"", "kind_of_food"=>"", "food_preference"=>"", "amount_people"=>"", "preparation_time"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar receita"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered recipes/new.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 114ms (Views: 94.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-01 11:32:47 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dNetCu9JtWd8yQX+8Awz21ijE2m87+p2dnep05bmZjJbAA2mbyzoEU+e3fgFIy9ddIa/XXaSksSUrnxdAUFw8g==", "recipe"=>{"name"=>"", "kitchen"=>"", "kind_of_food"=>"", "food_preference"=>"", "amount_people"=>"", "preparation_time"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar receita"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered recipes/new.html.erb within layouts/application (42.4ms)
+Completed 200 OK in 104ms (Views: 89.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-01 11:32:51 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (48.1ms)
+Completed 200 OK in 102ms (Views: 100.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-01 11:32:54 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g27+Ganyr+wk3fldMcq3GGOv8cAdmB7Z9Fca6roaHpGsuV61KZfymheKIVvE5aueT4pd9NflZmsWjs9kLb0IUQ==", "recipe"=>{"name"=>"", "kitchen"=>"", "kind_of_food"=>"", "food_preference"=>"", "amount_people"=>"", "preparation_time"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar receita"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  Rendered recipes/new.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 115ms (Views: 95.4ms | ActiveRecord: 0.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentFotoToRecipes (20151102024134)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "recipes" ADD "foto_file_name" varchar[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "recipes" ADD "foto_content_type" varchar
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "recipes" ADD "foto_file_size" integer[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "recipes" ADD "foto_updated_at" datetime
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151102024134"]]
+  [1m[35m (90.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-02 00:45:37 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 1.0ms)
+
+SyntaxError (/home/douglas/workspace/socialrecipes/app/views/recipes/new.html.erb:11: syntax error, unexpected ',', expecting ')'
+             , label: 'Dificuldade:' );@output_buffer.safe_append='
+              ^):
+  app/views/recipes/new.html.erb:11: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (24.5ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (53.4ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-02 00:46:09 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (154.0ms)
+Completed 200 OK in 581ms (Views: 579.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-02 00:46:10 -0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-02 00:46:10 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-02 00:46:10 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-02 00:46:10 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-02 00:46:10 -0200
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-02 00:48:35 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3QRf//NlWo/eyjYdyqT2eGBuWG4j4sTSf/2tm2vsFury0/9TcwAH+e2d7hs/i+r+TEv0WumfvGCdJHgV/EsAKg==", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "kind_of_food"=>"Doce", "food_preference"=>"Sem gluten", "amount_people"=>"5", "preparation_time"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado Piracanjuba\r\n- 1 lata de Leite Longa Vida Piracanjuba\r\n- 4 gemas", "preparation"=>"Bata todos os ingredientes no liquidificador, após coloque o creme em uma forma untada com melado (açúcar derretido com água) e leve ao banho-maria por 40 minutos. Sirva frio. ", "foto"=>#<ActionDispatch::Http::UploadedFile:0x007f8c7c17f038 @tempfile=#<Tempfile:/tmp/RackMultipart20151102-8524-zbfxdv.JPG>, @original_filename="11_01_12_Alimentos_Blog_Imagem_Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"11_01_12_Alimentos_Blog_Imagem_Pudim.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Cadastrar receita"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  app/controllers/recipes_controller.rb:11:in `create'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.3ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.8ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000004166cd8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000004166788 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000004131f60 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-02 00:50:47 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3QRf//NlWo/eyjYdyqT2eGBuWG4j4sTSf/2tm2vsFury0/9TcwAH+e2d7hs/i+r+TEv0WumfvGCdJHgV/EsAKg==", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "kind_of_food"=>"Doce", "food_preference"=>"Sem gluten", "amount_people"=>"5", "preparation_time"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado Piracanjuba\r\n- 1 lata de Leite Longa Vida Piracanjuba\r\n- 4 gemas", "preparation"=>"Bata todos os ingredientes no liquidificador, após coloque o creme em uma forma untada com melado (açúcar derretido com água) e leve ao banho-maria por 40 minutos. Sirva frio. ", "foto"=>#<ActionDispatch::Http::UploadedFile:0x007f8c7c89b470 @tempfile=#<Tempfile:/tmp/RackMultipart20151102-8524-11sjjl4.JPG>, @original_filename="11_01_12_Alimentos_Blog_Imagem_Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"11_01_12_Alimentos_Blog_Imagem_Pudim.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Cadastrar receita"}
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.1ms)
+
+Paperclip::Errors::MissingRequiredValidatorError (Paperclip::Errors::MissingRequiredValidatorError):
+  app/controllers/recipes_controller.rb:11:in `create'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.7ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000004166cd8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000004166788 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000004131f60 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-02 00:53:24 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3QRf//NlWo/eyjYdyqT2eGBuWG4j4sTSf/2tm2vsFury0/9TcwAH+e2d7hs/i+r+TEv0WumfvGCdJHgV/EsAKg==", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "kind_of_food"=>"Doce", "food_preference"=>"Sem gluten", "amount_people"=>"5", "preparation_time"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado Piracanjuba\r\n- 1 lata de Leite Longa Vida Piracanjuba\r\n- 4 gemas", "preparation"=>"Bata todos os ingredientes no liquidificador, após coloque o creme em uma forma untada com melado (açúcar derretido com água) e leve ao banho-maria por 40 minutos. Sirva frio. ", "foto"=>#<ActionDispatch::Http::UploadedFile:0x007f8c8d19af98 @tempfile=#<Tempfile:/tmp/RackMultipart20151102-8524-kzcl31.JPG>, @original_filename="11_01_12_Alimentos_Blog_Imagem_Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"11_01_12_Alimentos_Blog_Imagem_Pudim.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Cadastrar receita"}
+Command :: file -b --mime '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-8524-1pw5ym6.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-8524-yb3tdz.JPG[0]' 2>/dev/null
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 1.3ms)
+
+Paperclip::Errors::CommandNotFoundError (Could not run the `identify` command. Please install ImageMagick.):
+  app/controllers/recipes_controller.rb:11:in `create'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.5ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.4ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000004166cd8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000004166788 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000004131f60 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-02 12:43:12 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3QRf//NlWo/eyjYdyqT2eGBuWG4j4sTSf/2tm2vsFury0/9TcwAH+e2d7hs/i+r+TEv0WumfvGCdJHgV/EsAKg==", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "kind_of_food"=>"Doce", "food_preference"=>"Sem gluten", "amount_people"=>"5", "preparation_time"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado Piracanjuba\r\n- 1 lata de Leite Longa Vida Piracanjuba\r\n- 4 gemas", "preparation"=>"Bata todos os ingredientes no liquidificador, após coloque o creme em uma forma untada com melado (açúcar derretido com água) e leve ao banho-maria por 40 minutos. Sirva frio. ", "foto"=>#<ActionDispatch::Http::UploadedFile:0x0000000428cf90 @tempfile=#<Tempfile:/tmp/RackMultipart20151102-9944-17izj0h.JPG>, @original_filename="11_01_12_Alimentos_Blog_Imagem_Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"11_01_12_Alimentos_Blog_Imagem_Pudim.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Cadastrar receita"}
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-9944-bxjh6d.JPG'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-9944-dsvgmn.JPG[0]' 2>/dev/null
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.8ms)
+
+Paperclip::Errors::CommandNotFoundError (Could not run the `identify` command. Please install ImageMagick.):
+  app/controllers/recipes_controller.rb:11:in `create'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.4ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000002f521a0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000002f51e58 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000002f4eaa0 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-02 12:43:16 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3QRf//NlWo/eyjYdyqT2eGBuWG4j4sTSf/2tm2vsFury0/9TcwAH+e2d7hs/i+r+TEv0WumfvGCdJHgV/EsAKg==", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "kind_of_food"=>"Doce", "food_preference"=>"Sem gluten", "amount_people"=>"5", "preparation_time"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado Piracanjuba\r\n- 1 lata de Leite Longa Vida Piracanjuba\r\n- 4 gemas", "preparation"=>"Bata todos os ingredientes no liquidificador, após coloque o creme em uma forma untada com melado (açúcar derretido com água) e leve ao banho-maria por 40 minutos. Sirva frio. ", "foto"=>#<ActionDispatch::Http::UploadedFile:0x00000002fb57c8 @tempfile=#<Tempfile:/tmp/RackMultipart20151102-9944-1yc0xjr.JPG>, @original_filename="11_01_12_Alimentos_Blog_Imagem_Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"11_01_12_Alimentos_Blog_Imagem_Pudim.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Cadastrar receita"}
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-9944-16d0oad.JPG'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-9944-3f1t0z.JPG[0]' 2>/dev/null
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+Paperclip::Errors::CommandNotFoundError (Could not run the `identify` command. Please install ImageMagick.):
+  app/controllers/recipes_controller.rb:11:in `create'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.1ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000002f521a0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000002f51e58 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000002f4eaa0 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-02 12:43:24 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3QRf//NlWo/eyjYdyqT2eGBuWG4j4sTSf/2tm2vsFury0/9TcwAH+e2d7hs/i+r+TEv0WumfvGCdJHgV/EsAKg==", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "kind_of_food"=>"Doce", "food_preference"=>"Sem gluten", "amount_people"=>"5", "preparation_time"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado Piracanjuba\r\n- 1 lata de Leite Longa Vida Piracanjuba\r\n- 4 gemas", "preparation"=>"Bata todos os ingredientes no liquidificador, após coloque o creme em uma forma untada com melado (açúcar derretido com água) e leve ao banho-maria por 40 minutos. Sirva frio. ", "foto"=>#<ActionDispatch::Http::UploadedFile:0x00000000fc7790 @tempfile=#<Tempfile:/tmp/RackMultipart20151102-9944-mmvy.JPG>, @original_filename="11_01_12_Alimentos_Blog_Imagem_Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"11_01_12_Alimentos_Blog_Imagem_Pudim.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Cadastrar receita"}
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-9944-rgjsnz.JPG'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-9944-1yvl5f.JPG[0]' 2>/dev/null
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms)
+
+Paperclip::Errors::CommandNotFoundError (Could not run the `identify` command. Please install ImageMagick.):
+  app/controllers/recipes_controller.rb:11:in `create'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.0ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.2ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000002f521a0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000002f51e58 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000002f4eaa0 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-02 12:45:06 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (97.9ms)
+Completed 200 OK in 534ms (Views: 495.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-02 12:45:52 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b+vojbbBM9IlnJKYMS+pLxNQ59t+Vhcy1zqkXFEUQy5APEghNqRupBbLSp7EALWpP3VL77Qrb4A143HSxrNV7g==", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "kind_of_food"=>"Doce", "food_preference"=>"Sem gluten", "amount_people"=>"2", "preparation_time"=>"45", "difficulty"=>"Médio", "ingredients"=>"dfsfdfds", "preparation"=>"sdfdsffdsf", "foto"=>#<ActionDispatch::Http::UploadedFile:0x007fb8a9abd268 @tempfile=#<Tempfile:/tmp/RackMultipart20151102-11538-r4vib3.JPG>, @original_filename="11_01_12_Alimentos_Blog_Imagem_Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"11_01_12_Alimentos_Blog_Imagem_Pudim.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Cadastrar receita"}
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-11538-kovvz1.JPG'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-11538-1lhbfcv.JPG[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-11538-1lhbfcv.JPG[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-11538-1lhbfcv.JPG[0]' -auto-orient -resize "300x300>" '/tmp/26c75e10b481f4d0d4b31563c101587b20151102-11538-1231ktz'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-11538-1lhbfcv.JPG[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-11538-1lhbfcv.JPG[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-11538-1lhbfcv.JPG[0]' -auto-orient -resize "100x100>" '/tmp/26c75e10b481f4d0d4b31563c101587b20151102-11538-1ixmy03'
+  [1m[35m (0.2ms)[0m  begin transaction
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151102-11538-1qsik6q.JPG'
+  [1m[36mSQL (6.7ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen", "kind_of_food", "food_preference", "amount_people", "preparation_time", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["kind_of_food", "Doce"], ["food_preference", "Sem gluten"], ["amount_people", 2], ["preparation_time", 45], ["difficulty", "Médio"], ["ingredients", "dfsfdfds"], ["preparation", "sdfdsffdsf"], ["foto_file_name", "11_01_12_Alimentos_Blog_Imagem_Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-02 14:45:52.302788"], ["created_at", "2015-11-02 14:45:52.645305"], ["updated_at", "2015-11-02 14:45:52.645305"]]
+  [1m[35m (86.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 506ms (ActiveRecord: 92.9ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-02 12:45:52 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 128ms (Views: 110.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2015-11-02 12:46:04 -0200
+
+ActionController::RoutingError (No route matches [GET] "/recipes"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.3ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (60.0ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (37.2ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (72.2ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2015-11-02 12:46:04 -0200
+
+ActionController::RoutingError (No route matches [GET] "/recipes"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (17.4ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (63.5ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (36.5ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (77.4ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-02 12:47:39 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 101ms (Views: 97.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-02 12:47:39 -0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-02 12:47:39 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-02 12:47:39 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-02 12:47:39 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-02 12:47:39 -0200
+  [1m[36m (78.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (74.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRecipes (20151031215723)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "kind_of_food" varchar, "food_preference" varchar, "amount_people" integer, "preparation_time" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151031215723"]]
+  [1m[35m (88.9ms)[0m  commit transaction
+Migrating to AddAttachmentFotoToRecipes (20151102024134)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "recipes" ADD "foto_file_name" varchar
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "recipes" ADD "foto_content_type" varchar[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "recipes" ADD "foto_file_size" integer
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "recipes" ADD "foto_updated_at" datetime[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151102024134"]]
+  [1m[36m (76.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-03 20:34:04 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (136.0ms)
+Completed 200 OK in 538ms (Views: 494.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2015-11-03 20:34:17 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 64ms (Views: 62.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-03 20:34:24 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (42.8ms)
+Completed 200 OK in 85ms (Views: 84.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-03 20:34:53 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gcOno6X/Tp4tX4kbHIXCV+nho+4Ui2Qfs7Jk9h4Zs0KuFAcPJZoT6B4IUR3pqt7RxcQP2t72HK1Ra7F4ib6lgg==", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "kind_of_food"=>"Doce", "food_preference"=>"Sem gluten", "amount_people"=>"5", "preparation_time"=>"45", "difficulty"=>"Médio", "ingredients"=>"sfdfdssfdfdsfds", "preparation"=>"dfgdfgdfgdf", "foto"=>#<ActionDispatch::Http::UploadedFile:0x007f7811e71680 @tempfile=#<Tempfile:/tmp/RackMultipart20151103-15846-14meahy.JPG>, @original_filename="11_01_12_Alimentos_Blog_Imagem_Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"11_01_12_Alimentos_Blog_Imagem_Pudim.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Cadastrar receita"}
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151103-15846-1o3bqfx.JPG'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151103-15846-hulpnf.JPG[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151103-15846-hulpnf.JPG[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151103-15846-hulpnf.JPG[0]' -auto-orient -resize "300x300>" '/tmp/1af86cc1e293827e1a5b7d605e0d521520151103-15846-yfrx46'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151103-15846-hulpnf.JPG[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151103-15846-hulpnf.JPG[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151103-15846-hulpnf.JPG[0]' -auto-orient -resize "100x100>" '/tmp/1af86cc1e293827e1a5b7d605e0d521520151103-15846-12zbmj9'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/tmp/a0d4fc5ebd81d64437e454858c31aa4320151103-15846-rkliak.JPG'
+  [1m[35mSQL (8.4ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "kind_of_food", "food_preference", "amount_people", "preparation_time", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["kind_of_food", "Doce"], ["food_preference", "Sem gluten"], ["amount_people", 5], ["preparation_time", 45], ["difficulty", "Médio"], ["ingredients", "sfdfdssfdfdsfds"], ["preparation", "dfgdfgdfgdf"], ["foto_file_name", "11_01_12_Alimentos_Blog_Imagem_Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-03 22:34:53.047366"], ["created_at", "2015-11-03 22:34:53.222101"], ["updated_at", "2015-11-03 22:34:53.222101"]]
+  [1m[36m (89.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 334ms (ActiveRecord: 98.3ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-03 20:34:53 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 62ms (Views: 48.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2015-11-03 20:35:00 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 58ms (Views: 55.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-03 20:35:02 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2015-11-03 20:35:05 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.7ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 117ms (Views: 111.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-03 20:35:20 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 109ms (Views: 105.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2015-11-03 21:26:33 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (2.3ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 86ms (Views: 75.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-03 21:37:13 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 94ms (Views: 91.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2015-11-03 21:37:18 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.8ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 112ms (Views: 109.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-04 00:56:16 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 471ms (Views: 413.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-04 00:56:17 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-04 00:56:17 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-04 00:56:17 -0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-04 00:56:17 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-04 00:56:17 -0200
+
+
+Started GET "/system/recipes/fotos/000/000/001/thumb/11_01_12_Alimentos_Blog_Imagem_Pudim.JPG?1446590093" for 127.0.0.1 at 2015-11-04 00:56:17 -0200
+
+ActionController::RoutingError (No route matches [GET] "/system/recipes/fotos/000/000/001/thumb/11_01_12_Alimentos_Blog_Imagem_Pudim.JPG"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.2ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (72.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (32.4ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (70.6ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2015-11-04 00:56:19 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 129ms (Views: 126.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-04 00:56:21 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 110ms (Views: 103.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/system/recipes/fotos/000/000/001/thumb/11_01_12_Alimentos_Blog_Imagem_Pudim.JPG?1446590093" for 127.0.0.1 at 2015-11-04 00:56:22 -0200
+
+ActionController::RoutingError (No route matches [GET] "/system/recipes/fotos/000/000/001/thumb/11_01_12_Alimentos_Blog_Imagem_Pudim.JPG"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (25.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (50.0ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-04 00:59:34 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 56ms (Views: 53.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-04 00:59:34 -0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-04 00:59:34 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-04 00:59:34 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-04 00:59:34 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-04 00:59:34 -0200
+
+
+Started GET "/system/recipes/fotos/000/000/001/thumb/11_01_12_Alimentos_Blog_Imagem_Pudim.JPG?1446590093" for 127.0.0.1 at 2015-11-04 00:59:35 -0200
+
+ActionController::RoutingError (No route matches [GET] "/system/recipes/fotos/000/000/001/thumb/11_01_12_Alimentos_Blog_Imagem_Pudim.JPG"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.9ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (44.2ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (86.6ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2015-11-04 00:59:37 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 64ms (Views: 58.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-04 00:59:43 -0200
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (123.8ms)
+Completed 200 OK in 164ms (Views: 162.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-04 01:00:53 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sh4Jl5uvbQAD1I2rxvnFuPX6GcV2XniNR3bSplFfBA+dyak7G8owdjCDVa0z1tk+2d+18bwjAD+lrwcoxvgSzw==", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "kind_of_food"=>"Doce", "food_preference"=>"Sem gluten", "amount_people"=>"4", "preparation_time"=>"45", "difficulty"=>"Médio", "ingredients"=>"seffssdfds", "preparation"=>"sdgfdfggfd", "foto"=>#<ActionDispatch::Http::UploadedFile:0x007f951e4e4d40 @tempfile=#<Tempfile:/tmp/RackMultipart20151104-2752-1ts0e52.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Cadastrar receita"}
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151104-2752-1343wc9.JPG'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151104-2752-1w3xktr.JPG[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151104-2752-1w3xktr.JPG[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151104-2752-1w3xktr.JPG[0]' -auto-orient -resize "300x300>" '/tmp/d93b10248f8d9e839b04684ca69548eb20151104-2752-vzc56s'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151104-2752-1w3xktr.JPG[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151104-2752-1w3xktr.JPG[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151104-2752-1w3xktr.JPG[0]' -auto-orient -resize "100x100>" '/tmp/d93b10248f8d9e839b04684ca69548eb20151104-2752-186w1wp'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151104-2752-11faziw.JPG'
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "recipes" ("name", "kitchen", "kind_of_food", "food_preference", "amount_people", "preparation_time", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["kind_of_food", "Doce"], ["food_preference", "Sem gluten"], ["amount_people", 4], ["preparation_time", 45], ["difficulty", "Médio"], ["ingredients", "seffssdfds"], ["preparation", "sdgfdfggfd"], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-04 03:00:53.837945"], ["created_at", "2015-11-04 03:00:54.422559"], ["updated_at", "2015-11-04 03:00:54.422559"]]
+  [1m[36m (88.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/2
+Completed 302 Found in 736ms (ActiveRecord: 89.5ms)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2015-11-04 01:00:54 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered recipes/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 91ms (Views: 89.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2015-11-04 01:00:59 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (1.2ms)[0m  SELECT "recipes".* FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 67ms (Views: 63.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2015-11-04 01:01:01 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered recipes/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 86ms (Views: 83.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2015-11-04 01:01:03 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (1.8ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 94ms (Views: 89.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-04 01:01:04 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 64ms (Views: 62.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/system/recipes/fotos/000/000/001/thumb/11_01_12_Alimentos_Blog_Imagem_Pudim.JPG?1446590093" for 127.0.0.1 at 2015-11-04 01:01:04 -0200
+
+ActionController::RoutingError (No route matches [GET] "/system/recipes/fotos/000/000/001/thumb/11_01_12_Alimentos_Blog_Imagem_Pudim.JPG"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/douglas/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.2ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (27.5ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/douglas/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (55.7ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2015-11-04 01:01:06 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 54ms (Views: 52.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2015-11-04 01:01:18 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 95ms (Views: 92.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2015-11-04 01:01:45 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered recipes/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 87ms (Views: 82.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-04 01:01:45 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-11-04 01:01:45 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-04 01:01:45 -0200
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-04 01:01:45 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-04 01:01:45 -0200
+
+
+Started GET "/recipes" for 127.0.0.1 at 2015-11-04 01:01:52 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 52ms (Views: 48.1ms | ActiveRecord: 0.9ms)
+  [1m[36m (88.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (90.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRecipes (20151105171933)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151105171933"]]
+  [1m[35m (73.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentFotoToRecipes (20151105172621)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "recipes" ADD "foto_file_name" varchar[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "recipes" ADD "foto_content_type" varchar
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "recipes" ADD "foto_file_size" integer[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "recipes" ADD "foto_updated_at" datetime
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151105172621"]]
+  [1m[35m (244.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 16:15:18 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (102.1ms)
+Completed 200 OK in 1580ms (Views: 1538.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2015-11-05 16:16:11 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Da7okolgOw0GER4k3ouljMdg25OLFaQjTS5TWr5xxLnKHdjakup37AHOMF0hl0NtpYe2zjxVNfnQEX5sK5cjIg==", "recipe"=>{"name"=>"Pudim de Leite", "kitchen"=>"Portuguesa", "type_of_food"=>"Doce", "preference"=>"sem glutem", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"sdfggfsdgdfgsdfgfg", "preparation"=>"dfhgdfghsdfhgsdfghdfg", "foto"=>#<ActionDispatch::Http::UploadedFile:0x007faebd705c88 @tempfile=#<Tempfile:/tmp/RackMultipart20151105-6495-2ggv5m.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Cadastrar Receita"}
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-6495-lulcca.JPG'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-6495-r5g2l5.JPG[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-6495-r5g2l5.JPG[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-6495-r5g2l5.JPG[0]' -auto-orient -resize "300x300>" '/tmp/3a37dbf6bed73e9c1101c631ee6fb5c720151105-6495-1lq4ir8'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-6495-r5g2l5.JPG[0]' 2>/dev/null
+Command :: PATH=/opt/ImageMagick/bin:$PATH; identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-6495-r5g2l5.JPG[0]'
+Command :: PATH=/opt/ImageMagick/bin:$PATH; convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-6495-r5g2l5.JPG[0]' -auto-orient -resize "100x100>" '/tmp/3a37dbf6bed73e9c1101c631ee6fb5c720151105-6495-1nzus1j'
+  [1m[35m (0.2ms)[0m  begin transaction
+Command :: PATH=/opt/ImageMagick/bin:$PATH; file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151105-6495-1mkhzfz.JPG'
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen", "type_of_food", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen", "Portuguesa"], ["type_of_food", "Doce"], ["preference", "sem glutem"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "sdfggfsdgdfgsdfgfg"], ["preparation", "dfhgdfghsdfhgsdfghdfg"], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-05 18:16:11.717025"], ["created_at", "2015-11-05 18:16:11.876670"], ["updated_at", "2015-11-05 18:16:11.876670"]]
+  [1m[35m (74.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 283ms (ActiveRecord: 75.5ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-05 16:16:12 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 75ms (Views: 57.9ms | ActiveRecord: 0.5ms)
