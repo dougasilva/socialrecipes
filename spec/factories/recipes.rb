@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :recipe do
     name 'Pudim de Leite'
-    kitchen 'Portuguesa'
+    kitchen
     type_of_food 'Sobremesa'
     preference 'Sem gluten'
     amount 5

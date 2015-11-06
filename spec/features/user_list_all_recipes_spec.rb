@@ -2,7 +2,7 @@ require 'rails_helper'
 feature 'User list all recipes' do
   scenario 'Successffuly' do
     recipe = create(:recipe)
-    recipe2 = create(:recipe, name: 'Picadinho de Carne', kitchen: 'Brasileira',
+    recipe2 = create(:recipe, name: 'Picadinho de Carne',
                               type_of_food: 'Carnes', preference: 'Bovino',
                               amount: 5, time_preparation: 75,
                               difficulty: 'Médio', ingredients: '200 g de carne
@@ -30,7 +30,7 @@ feature 'User list all recipes' do
     click_on recipe.name
 
     expect(page).to have_content recipe.name
-    expect(page).to have_content recipe.kitchen
+    expect(page).to have_content recipe.kitchen.name
     expect(page).to have_content recipe.type_of_food
     expect(page).to have_content recipe.preference
     expect(page).to have_content recipe.amount
