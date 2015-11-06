@@ -4,12 +4,13 @@ feature 'User insert a new recipe' do
   scenario 'successfully' do
     create(:kitchen)
     create(:type_of_food)
+    create(:preference)
     visit new_recipe_path
 
     fill_in 'Receita:', with: 'Pudim de Leite'
     select('Portuguesa', from: 'Cozinha:')
     select('Sobremesa', from: 'Tipo de Comida:')
-    fill_in 'Preferência de Comida:', with: 'Sem gluten'
+    select('Sem gluten', from: 'Preferência de Comida:')
     fill_in 'Serve:', with: '5'
     select('Médio', from: 'Dificuldade:')
     fill_in 'Tempo de Preparo:', with: '45'

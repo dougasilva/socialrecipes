@@ -2,8 +2,8 @@
 <%if @recipes.any? %>
   <% @recipes.each do |recipe| %>
     <%= link_to recipe.name, recipe %><br>
-    <%= recipe.preference %><br>
-    <%= recipe.kitchen %><br>
+    <%= recipe.preference.name %><br>
+    <%= recipe.kitchen.name %><br>
     <%= recipe.difficulty %><br>
   <% end %>
 <% else %>

@@ -6,7 +6,8 @@
                     value_method: :id %>
  <%= f.association :type_of_food, label: 'Tipo de Comida:', label_method: :name,
                     value_method: :id %>
- <%= f.input :preference, label: 'Preferência de Comida:' %>
+ <%= f.association :preference, label: 'Preferência de Comida:',
+                    label_method: :name, value_method: :id %>
  <%= f.input :amount, label: 'Serve:' %>
  <%= f.input :time_preparation, label: 'Tempo de Preparo:' %>
  <%= f.input :difficulty, collection: ['Difícil', 'Médio', 'Fácil'],

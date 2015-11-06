@@ -9,4 +9,5 @@ class Recipe < ActiveRecord::Base
                                                              'image/gif'] }
   belongs_to :kitchen
   belongs_to :type_of_food
+  belongs_to :preference
 end
