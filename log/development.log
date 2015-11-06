@@ -1591,3 +1591,69 @@ Migrating to AddKitchensRefRecipes (20151106122825)
             FROM sqlite_temp_master
             WHERE name='index_recipes_on_kitchen_id' AND type='index'
 [0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTypeOfFoods (20151106131632)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "type_of_foods" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106131632"]]
+  [1m[36m (94.0ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveTypeOfFoodFromRecipes (20151106131801)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime, "kitchen_id" integer) [0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_kitchen_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_kitchen_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "tindex_arecipes_on_kitchen_id" ON "arecipes" ("kitchen_id")
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "recipes"[0m
+  [1m[35m (1.3ms)[0m  DROP TABLE "recipes"
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime, "kitchen_id" integer) [0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_arecipes_on_kitchen_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_arecipes_on_kitchen_id' AND type='index'
+
+  [1m[36m (0.5ms)[0m  [1mCREATE  INDEX "index_recipes_on_kitchen_id" ON "recipes" ("kitchen_id")[0m
+  [1m[35m (0.4ms)[0m  SELECT * FROM "arecipes"
+  [1m[36m (0.8ms)[0m  [1mDROP TABLE "arecipes"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106131801"]]
+  [1m[36m (73.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddTypeOfFoodRefToRecipe (20151106132042)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "recipes" ADD "type_of_food_id" integer[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_kitchen_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_kitchen_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_recipes_on_type_of_food_id" ON "recipes" ("type_of_food_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106132042"]]
+  [1m[36m (92.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_type_of_food_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_type_of_food_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_kitchen_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_kitchen_id' AND type='index'
+

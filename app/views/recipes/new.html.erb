@@ -4,7 +4,8 @@
  <%= f.input :name, label: 'Receita:' %>
  <%= f.association :kitchen, label: 'Cozinha:', label_method: :name,
                     value_method: :id %>
- <%= f.input :type_of_food, label: 'Tipo de Comida:' %>
+ <%= f.association :type_of_food, label: 'Tipo de Comida:', label_method: :name,
+                    value_method: :id %>
  <%= f.input :preference, label: 'Preferência de Comida:' %>
  <%= f.input :amount, label: 'Serve:' %>
  <%= f.input :time_preparation, label: 'Tempo de Preparo:' %>

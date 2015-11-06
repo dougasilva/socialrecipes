@@ -6273,3 +6273,1209 @@ Processing by RecipesController#index as HTML
   Rendered recipes/index.html.erb within layouts/application (7.3ms)
 Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.6ms)
   [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/kitchens/new" for 127.0.0.1 at 2015-11-06 11:22:23 -0200
+Processing by KitchensController#new as HTML
+  Rendered kitchens/new.html.erb within layouts/application (83.5ms)
+Completed 200 OK in 435ms (Views: 410.0ms | ActiveRecord: 0.7ms)
+Started POST "/kitchens" for 127.0.0.1 at 2015-11-06 11:22:23 -0200
+Processing by KitchensController#create as HTML
+  Parameters: {"utf8"=>"✓", "kitchen"=>{"name"=>"Brasileira"}, "commit"=>"Cadastrar Cozinha"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Brasileira"], ["created_at", "2015-11-06 13:22:23.777436"], ["updated_at", "2015-11-06 13:22:23.777436"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/kitchens/1
+Completed 302 Found in 57ms (ActiveRecord: 1.3ms)
+Started GET "/kitchens/1" for 127.0.0.1 at 2015-11-06 11:22:23 -0200
+Processing by KitchensController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mKitchen Load (0.3ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered kitchens/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 29ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/kitchens/new" for 127.0.0.1 at 2015-11-06 11:22:23 -0200
+Processing by KitchensController#new as HTML
+  Rendered kitchens/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+Started POST "/kitchens" for 127.0.0.1 at 2015-11-06 11:22:23 -0200
+Processing by KitchensController#create as HTML
+  Parameters: {"utf8"=>"✓", "kitchen"=>{"name"=>""}, "commit"=>"Cadastrar Cozinha"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered kitchens/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 16ms (Views: 7.8ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 13:22:23.921129"], ["updated_at", "2015-11-06 13:22:23.921129"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 11:22:23 -0200
+Processing by RecipesController#new as HTML
+  [1m[35mKitchen Load (0.3ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  Rendered recipes/new.html.erb within layouts/application (45.7ms)
+Completed 200 OK in 92ms (Views: 50.3ms | ActiveRecord: 1.0ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 11:22:24 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen_id"=>"1", "type_of_food"=>"Sobremesa", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x00000003ab1f50 @tempfile=#<Tempfile:/tmp/RackMultipart20151106-26477-1oe1rr6.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 11:22:24 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.3ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  Rendered recipes/new.html.erb within layouts/application (56.6ms)
+Completed 200 OK in 62ms (Views: 60.8ms | ActiveRecord: 0.3ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 11:22:24 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen_id"=>"", "type_of_food"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Portuguesa"], ["created_at", "2015-11-06 13:22:24.191624"], ["updated_at", "2015-11-06 13:22:24.191624"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 13:22:24.201831"], ["updated_at", "2015-11-06 13:22:24.201831"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/kitchens/new" for 127.0.0.1 at 2015-11-06 11:23:45 -0200
+Processing by KitchensController#new as HTML
+  Rendered kitchens/new.html.erb within layouts/application (82.1ms)
+Completed 200 OK in 431ms (Views: 406.2ms | ActiveRecord: 0.6ms)
+Started POST "/kitchens" for 127.0.0.1 at 2015-11-06 11:23:46 -0200
+Processing by KitchensController#create as HTML
+  Parameters: {"utf8"=>"✓", "kitchen"=>{"name"=>"Brasileira"}, "commit"=>"Cadastrar Cozinha"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Brasileira"], ["created_at", "2015-11-06 13:23:46.076132"], ["updated_at", "2015-11-06 13:23:46.076132"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/kitchens/1
+Completed 302 Found in 53ms (ActiveRecord: 1.2ms)
+Started GET "/kitchens/1" for 127.0.0.1 at 2015-11-06 11:23:46 -0200
+Processing by KitchensController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mKitchen Load (0.3ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered kitchens/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/kitchens/new" for 127.0.0.1 at 2015-11-06 11:23:46 -0200
+Processing by KitchensController#new as HTML
+  Rendered kitchens/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+Started POST "/kitchens" for 127.0.0.1 at 2015-11-06 11:23:46 -0200
+Processing by KitchensController#create as HTML
+  Parameters: {"utf8"=>"✓", "kitchen"=>{"name"=>""}, "commit"=>"Cadastrar Cozinha"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered kitchens/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 15ms (Views: 7.2ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 13:23:46.203278"], ["updated_at", "2015-11-06 13:23:46.203278"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 11:23:46 -0200
+Processing by RecipesController#new as HTML
+  [1m[35mKitchen Load (0.3ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  Rendered recipes/new.html.erb within layouts/application (57.9ms)
+Completed 200 OK in 101ms (Views: 63.1ms | ActiveRecord: 0.8ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 11:23:46 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen_id"=>"1", "type_of_food"=>"Sobremesa", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x000000040946e8 @tempfile=#<Tempfile:/tmp/RackMultipart20151106-26509-1g2whxh.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (1.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 11:23:46 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.3ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  Rendered recipes/new.html.erb within layouts/application (48.2ms)
+Completed 200 OK in 55ms (Views: 52.6ms | ActiveRecord: 0.3ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 11:23:46 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen_id"=>"", "type_of_food"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Portuguesa"], ["created_at", "2015-11-06 13:23:46.467548"], ["updated_at", "2015-11-06 13:23:46.467548"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 13:23:46.478152"], ["updated_at", "2015-11-06 13:23:46.478152"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:36:53 -0200
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:36:53 -0200
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:39:10 -0200
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:39:10 -0200
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:39:36 -0200
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:39:36 -0200
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:39:53 -0200
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:39:53 -0200
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:43:53 -0200
+Processing by TypeOfFoodsController#new as HTML
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:43:53 -0200
+Processing by TypeOfFoodsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:57:03 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (53.3ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:57:03 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:58:49 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (52.5ms)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 11:58:49 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 12:00:09 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (85.6ms)
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 12:00:09 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 12:02:03 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (80.4ms)
+Completed 200 OK in 436ms (Views: 408.5ms | ActiveRecord: 0.6ms)
+Started POST "/type_of_foods" for 127.0.0.1 at 2015-11-06 12:02:03 -0200
+Processing by TypeOfFoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "type_of_food"=>{"name"=>"Sobremesa"}, "commit"=>"Cadastrar Tipo"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:02:03.641797"], ["updated_at", "2015-11-06 14:02:03.641797"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/type_of_foods/1
+Completed 302 Found in 12ms (ActiveRecord: 1.1ms)
+Started GET "/type_of_foods/1" for 127.0.0.1 at 2015-11-06 12:02:03 -0200
+Processing by TypeOfFoodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTypeOfFood Load (0.3ms)[0m  SELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered type_of_foods/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 60ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 12:02:03 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+Started POST "/type_of_foods" for 127.0.0.1 at 2015-11-06 12:02:03 -0200
+Processing by TypeOfFoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "type_of_food"=>{"name"=>""}, "commit"=>"Cadastrar Tipo"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered type_of_foods/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 15ms (Views: 7.3ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:05:49.198002"], ["updated_at", "2015-11-06 14:05:49.198002"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:05:49 -0200
+Processing by RecipesController#new as HTML
+  [1m[35mKitchen Load (1.0ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36mTypeOfFood Load (0.3ms)[0m  [1mSELECT "type_of_foods".* FROM "type_of_foods"[0m
+  Rendered recipes/new.html.erb within layouts/application (148.5ms)
+Completed 200 OK in 528ms (Views: 482.5ms | ActiveRecord: 2.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:05:49 -0200
+Processing by RecipesController#new as HTML
+  [1m[35mKitchen Load (0.4ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36mTypeOfFood Load (0.2ms)[0m  [1mSELECT "type_of_foods".* FROM "type_of_foods"[0m
+  Rendered recipes/new.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.6ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:05:49 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen_id"=>"", "type_of_food_id"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+Unpermitted parameter: type_of_food_id
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mKitchen Load (0.2ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36mTypeOfFood Load (0.2ms)[0m  [1mSELECT "type_of_foods".* FROM "type_of_foods"[0m
+  Rendered recipes/new.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 57ms (Views: 30.0ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:06:44 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.3ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.3ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (152.8ms)
+Completed 200 OK in 537ms (Views: 491.0ms | ActiveRecord: 2.3ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:06:45 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.4ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.2ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.6ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:06:45 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen_id"=>"", "type_of_food_id"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+Unpermitted parameter: type_of_food_id
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mKitchen Load (0.2ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.2ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 57ms (Views: 28.8ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:07:24.007651"], ["updated_at", "2015-11-06 14:07:24.007651"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:07:24.026745"], ["updated_at", "2015-11-06 14:07:24.026745"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:07:24 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.3ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.3ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (144.2ms)
+Completed 200 OK in 526ms (Views: 480.5ms | ActiveRecord: 1.1ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:07:24 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen_id"=>"1", "type_of_food_id"=>"1", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x000000062420d8 @tempfile=#<Tempfile:/tmp/RackMultipart20151106-26832-3muqr8.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Unpermitted parameter: type_of_food_id
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26832-1bv8qmb.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26832-1p2cs1i.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26832-1p2cs1i.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26832-1p2cs1i.JPG[0]' -auto-orient -resize "300x300>" '/tmp/4f6cc46b6f0dc5050cf55e3c4d965a4920151106-26832-1f0jsq4'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26832-1p2cs1i.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26832-1p2cs1i.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26832-1p2cs1i.JPG[0]' -auto-orient -resize "100x100>" '/tmp/4f6cc46b6f0dc5050cf55e3c4d965a4920151106-26832-7aorav'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mKitchen Load (0.3ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26832-ej6e6q.JPG'
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26832-1u1dmxu.JPG'
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mKitchen Load (0.3ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36mTypeOfFood Load (0.3ms)[0m  [1mSELECT "type_of_foods".* FROM "type_of_foods"[0m
+  Rendered recipes/new.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 188ms (Views: 32.4ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:07:24 -0200
+Processing by RecipesController#new as HTML
+  [1m[35mKitchen Load (0.4ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36mTypeOfFood Load (0.2ms)[0m  [1mSELECT "type_of_foods".* FROM "type_of_foods"[0m
+  Rendered recipes/new.html.erb within layouts/application (44.3ms)
+Completed 200 OK in 61ms (Views: 59.5ms | ActiveRecord: 0.7ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:07:24 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen_id"=>"", "type_of_food_id"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+Unpermitted parameter: type_of_food_id
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mKitchen Load (0.2ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36mTypeOfFood Load (0.3ms)[0m  [1mSELECT "type_of_foods".* FROM "type_of_foods"[0m
+  Rendered recipes/new.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 66ms (Views: 40.5ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:08:58.206222"], ["updated_at", "2015-11-06 14:08:58.206222"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:08:58.226456"], ["updated_at", "2015-11-06 14:08:58.226456"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:08:58 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.3ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.4ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (160.9ms)
+Completed 200 OK in 552ms (Views: 507.4ms | ActiveRecord: 1.2ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:08:58 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen_id"=>"1", "type_of_food_id"=>"1", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x000000074c9828 @tempfile=#<Tempfile:/tmp/RackMultipart20151106-26868-hs47yd.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Unpermitted parameter: type_of_food_id
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26868-1skgbxh.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26868-14laxyy.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26868-14laxyy.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26868-14laxyy.JPG[0]' -auto-orient -resize "300x300>" '/tmp/24ccab69800a6d4d7f2254ddd777789020151106-26868-18b9jap'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26868-14laxyy.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26868-14laxyy.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26868-14laxyy.JPG[0]' -auto-orient -resize "100x100>" '/tmp/24ccab69800a6d4d7f2254ddd777789020151106-26868-mbblc4'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mKitchen Load (0.7ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26868-r0h4h2.JPG'
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26868-2r0fne.JPG'
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mKitchen Load (0.3ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36mTypeOfFood Load (0.3ms)[0m  [1mSELECT "type_of_foods".* FROM "type_of_foods"[0m
+  Rendered recipes/new.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 236ms (Views: 32.6ms | ActiveRecord: 2.2ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:08:59 -0200
+Processing by RecipesController#new as HTML
+  [1m[35mKitchen Load (0.4ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36mTypeOfFood Load (0.3ms)[0m  [1mSELECT "type_of_foods".* FROM "type_of_foods"[0m
+  Rendered recipes/new.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 54ms (Views: 52.6ms | ActiveRecord: 0.7ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:08:59 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen_id"=>"", "type_of_food_id"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+Unpermitted parameter: type_of_food_id
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mKitchen Load (0.3ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36mTypeOfFood Load (1.1ms)[0m  [1mSELECT "type_of_foods".* FROM "type_of_foods"[0m
+  Rendered recipes/new.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 71ms (Views: 42.2ms | ActiveRecord: 2.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:13:19.856464"], ["updated_at", "2015-11-06 14:13:19.856464"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:13:19.875306"], ["updated_at", "2015-11-06 14:13:19.875306"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:13:19 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.3ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (1.0ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (142.8ms)
+Completed 200 OK in 517ms (Views: 472.9ms | ActiveRecord: 1.8ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:13:20 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen_id"=>"1", "type_of_food_id"=>"1", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x0000000627c120 @tempfile=#<Tempfile:/tmp/RackMultipart20151106-26926-1wddnyz.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26926-1uyodle.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26926-154t57l.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26926-154t57l.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26926-154t57l.JPG[0]' -auto-orient -resize "300x300>" '/tmp/bc667a7bad830e8f951d26488d6da57f20151106-26926-5873pg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26926-154t57l.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26926-154t57l.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26926-154t57l.JPG[0]' -auto-orient -resize "100x100>" '/tmp/bc667a7bad830e8f951d26488d6da57f20151106-26926-1uzj23r'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mKitchen Load (0.3ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTypeOfFood Load (0.3ms)[0m  [1mSELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1[0m  [["id", 1]]
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26926-jnxcso.JPG'
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-06 14:13:20.470650"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio."], ["created_at", "2015-11-06 14:13:20.609396"], ["updated_at", "2015-11-06 14:13:20.609396"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/1
+Completed 302 Found in 169ms (ActiveRecord: 1.8ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-06 12:13:20 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mKitchen Load (0.1ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTypeOfFood Load (0.2ms)[0m  SELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 20ms (Views: 10.6ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:13:20 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.4ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.2ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.6ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:13:20 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen_id"=>"", "type_of_food_id"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mKitchen Load (0.2ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (1.0ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 77ms (Views: 37.6ms | ActiveRecord: 2.5ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/kitchens/new" for 127.0.0.1 at 2015-11-06 12:13:53 -0200
+Processing by KitchensController#new as HTML
+  Rendered kitchens/new.html.erb within layouts/application (86.0ms)
+Completed 200 OK in 436ms (Views: 411.9ms | ActiveRecord: 0.7ms)
+Started POST "/kitchens" for 127.0.0.1 at 2015-11-06 12:13:53 -0200
+Processing by KitchensController#create as HTML
+  Parameters: {"utf8"=>"✓", "kitchen"=>{"name"=>"Brasileira"}, "commit"=>"Cadastrar Cozinha"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Brasileira"], ["created_at", "2015-11-06 14:13:53.986210"], ["updated_at", "2015-11-06 14:13:53.986210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/kitchens/1
+Completed 302 Found in 14ms (ActiveRecord: 1.2ms)
+Started GET "/kitchens/1" for 127.0.0.1 at 2015-11-06 12:13:53 -0200
+Processing by KitchensController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mKitchen Load (0.3ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered kitchens/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/kitchens/new" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by KitchensController#new as HTML
+  Rendered kitchens/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+Started POST "/kitchens" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by KitchensController#create as HTML
+  Parameters: {"utf8"=>"✓", "kitchen"=>{"name"=>""}, "commit"=>"Cadastrar Cozinha"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered kitchens/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 15ms (Views: 7.0ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 19ms (Views: 11.2ms | ActiveRecord: 0.5ms)
+Started POST "/type_of_foods" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by TypeOfFoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "type_of_food"=>{"name"=>"Sobremesa"}, "commit"=>"Cadastrar Tipo"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:13:54.107394"], ["updated_at", "2015-11-06 14:13:54.107394"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/type_of_foods/1
+Completed 302 Found in 10ms (ActiveRecord: 1.3ms)
+Started GET "/type_of_foods/1" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by TypeOfFoodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTypeOfFood Load (0.3ms)[0m  SELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered type_of_foods/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+Started POST "/type_of_foods" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by TypeOfFoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "type_of_food"=>{"name"=>""}, "commit"=>"Cadastrar Tipo"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered type_of_foods/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 14ms (Views: 6.6ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:13:54.174016"], ["updated_at", "2015-11-06 14:13:54.174016"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:13:54.179535"], ["updated_at", "2015-11-06 14:13:54.179535"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.2ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.2ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (72.7ms)
+Completed 200 OK in 127ms (Views: 78.9ms | ActiveRecord: 1.0ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen_id"=>"1", "type_of_food_id"=>"1", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x00000007706960 @tempfile=#<Tempfile:/tmp/RackMultipart20151106-26950-zkug2t.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26950-19z0qjs.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26950-18eh0nr.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26950-18eh0nr.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26950-18eh0nr.JPG[0]' -auto-orient -resize "300x300>" '/tmp/943bec3fb9f624e14dcc2ae51015c88620151106-26950-1yu3lij'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26950-18eh0nr.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26950-18eh0nr.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26950-18eh0nr.JPG[0]' -auto-orient -resize "100x100>" '/tmp/943bec3fb9f624e14dcc2ae51015c88620151106-26950-l1e7ec'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTypeOfFood Load (0.2ms)[0m  [1mSELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1[0m  [["id", 1]]
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-26950-12fda2i.JPG'
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-06 14:13:54.390637"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio."], ["created_at", "2015-11-06 14:13:54.543520"], ["updated_at", "2015-11-06 14:13:54.543520"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/1
+Completed 302 Found in 197ms (ActiveRecord: 1.3ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mKitchen Load (0.1ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTypeOfFood Load (0.1ms)[0m  SELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.3ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.2ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.6ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen_id"=>"", "type_of_food_id"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mKitchen Load (0.2ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.2ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 43ms (Views: 26.0ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:13:54.727270"], ["updated_at", "2015-11-06 14:13:54.727270"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:13:54.732695"], ["updated_at", "2015-11-06 14:13:54.732695"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:13:54.736909"], ["created_at", "2015-11-06 14:13:54.739765"], ["updated_at", "2015-11-06 14:13:54.739765"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:13:54.748162"], ["updated_at", "2015-11-06 14:13:54.748162"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:13:54.757007"], ["updated_at", "2015-11-06 14:13:54.757007"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:13:54.762217"], ["updated_at", "2015-11-06 14:13:54.762217"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:13:54.766180"], ["created_at", "2015-11-06 14:13:54.768946"], ["updated_at", "2015-11-06 14:13:54.768946"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.6ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-06 12:13:54 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTypeOfFood Load (0.1ms)[0m  [1mSELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:16:20.102516"], ["updated_at", "2015-11-06 14:16:20.102516"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:16:20.129703"], ["updated_at", "2015-11-06 14:16:20.129703"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:16:20.135592"], ["created_at", "2015-11-06 14:16:20.138831"], ["updated_at", "2015-11-06 14:16:20.138831"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:16:20.147099"], ["updated_at", "2015-11-06 14:16:20.147099"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:16:20.151948"], ["updated_at", "2015-11-06 14:16:20.151948"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Picadinho de Carne"], ["kitchen_id", 2], ["type_of_food_id", 2], ["preference", "Bovino"], ["amount", 5], ["time_preparation", 75], ["difficulty", "Médio"], ["ingredients", "200 g de carne\n                              (patinho, alcatra) em tirinhas, 2 linguiças de\n                              churrasco em pedaços, 1 gomo de calabresa em\n                              pedaços, 200 g de bacon em pedaços, 2 pimentões\n                              em tirinhas, azeitona sem caroço, molho de tomate,\n                              milho verde, óleo"], ["preparation", "Frite a carne,\n                              a linguiça, a calabresa e o bacon separados;\n                              Doure os pimentões com óleo (ou da forma que\n                              preferir); Acrescente o bacon, mexendo por mais\n                              uns 3 minutos; Junte a carne, a linguiça e a\n                              calabresa mexendo por 1 minuto; Acrescente o molho\n                              de tomate, azeitona e milho verde mexendo\n                              por 2 minutos"], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:16:20.156066"], ["created_at", "2015-11-06 14:16:20.158824"], ["updated_at", "2015-11-06 14:16:20.158824"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes" for 127.0.0.1 at 2015-11-06 12:16:20 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes"
+  [1m[36mKitchen Load (0.3ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered recipes/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 408ms (Views: 393.1ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:16:20.602734"], ["updated_at", "2015-11-06 14:16:20.602734"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:16:20.608925"], ["updated_at", "2015-11-06 14:16:20.608925"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:16:20.613314"], ["created_at", "2015-11-06 14:16:20.616276"], ["updated_at", "2015-11-06 14:16:20.616276"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes" for 127.0.0.1 at 2015-11-06 12:16:20 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.7ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-06 12:16:20 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.2ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTypeOfFood Load (0.3ms)[0m  [1mSELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 21ms (Views: 12.4ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:17:25.978351"], ["updated_at", "2015-11-06 14:17:25.978351"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:17:26.005729"], ["updated_at", "2015-11-06 14:17:26.005729"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:17:26.011740"], ["created_at", "2015-11-06 14:17:26.014903"], ["updated_at", "2015-11-06 14:17:26.014903"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:17:26.023105"], ["updated_at", "2015-11-06 14:17:26.023105"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:17:26.027950"], ["updated_at", "2015-11-06 14:17:26.027950"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Picadinho de Carne"], ["kitchen_id", 2], ["type_of_food_id", 2], ["preference", "Bovino"], ["amount", 5], ["time_preparation", 75], ["difficulty", "Médio"], ["ingredients", "200 g de carne\n                              (patinho, alcatra) em tirinhas, 2 linguiças de\n                              churrasco em pedaços, 1 gomo de calabresa em\n                              pedaços, 200 g de bacon em pedaços, 2 pimentões\n                              em tirinhas, azeitona sem caroço, molho de tomate,\n                              milho verde, óleo"], ["preparation", "Frite a carne,\n                              a linguiça, a calabresa e o bacon separados;\n                              Doure os pimentões com óleo (ou da forma que\n                              preferir); Acrescente o bacon, mexendo por mais\n                              uns 3 minutos; Junte a carne, a linguiça e a\n                              calabresa mexendo por 1 minuto; Acrescente o molho\n                              de tomate, azeitona e milho verde mexendo\n                              por 2 minutos"], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:17:26.031934"], ["created_at", "2015-11-06 14:17:26.034390"], ["updated_at", "2015-11-06 14:17:26.034390"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes" for 127.0.0.1 at 2015-11-06 12:17:26 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes"
+  [1m[36mKitchen Load (0.3ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered recipes/index.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 403ms (Views: 388.2ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:17:26.472680"], ["updated_at", "2015-11-06 14:17:26.472680"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:17:26.478482"], ["updated_at", "2015-11-06 14:17:26.478482"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:17:26.483719"], ["created_at", "2015-11-06 14:17:26.486843"], ["updated_at", "2015-11-06 14:17:26.486843"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes" for 127.0.0.1 at 2015-11-06 12:17:26 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.6ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-06 12:17:26 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTypeOfFood Load (0.3ms)[0m  [1mSELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 22ms (Views: 12.7ms | ActiveRecord: 0.9ms)
+Started GET "/recipes" for 127.0.0.1 at 2015-11-06 12:17:26 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/kitchens/new" for 127.0.0.1 at 2015-11-06 12:17:36 -0200
+Processing by KitchensController#new as HTML
+  Rendered kitchens/new.html.erb within layouts/application (86.8ms)
+Completed 200 OK in 432ms (Views: 407.9ms | ActiveRecord: 0.7ms)
+Started POST "/kitchens" for 127.0.0.1 at 2015-11-06 12:17:36 -0200
+Processing by KitchensController#create as HTML
+  Parameters: {"utf8"=>"✓", "kitchen"=>{"name"=>"Brasileira"}, "commit"=>"Cadastrar Cozinha"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Brasileira"], ["created_at", "2015-11-06 14:17:36.916835"], ["updated_at", "2015-11-06 14:17:36.916835"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/kitchens/1
+Completed 302 Found in 14ms (ActiveRecord: 1.3ms)
+Started GET "/kitchens/1" for 127.0.0.1 at 2015-11-06 12:17:36 -0200
+Processing by KitchensController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mKitchen Load (0.3ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered kitchens/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/kitchens/new" for 127.0.0.1 at 2015-11-06 12:17:36 -0200
+Processing by KitchensController#new as HTML
+  Rendered kitchens/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+Started POST "/kitchens" for 127.0.0.1 at 2015-11-06 12:17:36 -0200
+Processing by KitchensController#create as HTML
+  Parameters: {"utf8"=>"✓", "kitchen"=>{"name"=>""}, "commit"=>"Cadastrar Cozinha"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered kitchens/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 15ms (Views: 7.4ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 12:17:36 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 19ms (Views: 11.1ms | ActiveRecord: 0.5ms)
+Started POST "/type_of_foods" for 127.0.0.1 at 2015-11-06 12:17:37 -0200
+Processing by TypeOfFoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "type_of_food"=>{"name"=>"Sobremesa"}, "commit"=>"Cadastrar Tipo"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:17:37.037114"], ["updated_at", "2015-11-06 14:17:37.037114"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/type_of_foods/1
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+Started GET "/type_of_foods/1" for 127.0.0.1 at 2015-11-06 12:17:37 -0200
+Processing by TypeOfFoodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTypeOfFood Load (0.4ms)[0m  SELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered type_of_foods/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 12:17:37 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+Started POST "/type_of_foods" for 127.0.0.1 at 2015-11-06 12:17:37 -0200
+Processing by TypeOfFoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "type_of_food"=>{"name"=>""}, "commit"=>"Cadastrar Tipo"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered type_of_foods/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 15ms (Views: 6.8ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:17:37.103650"], ["updated_at", "2015-11-06 14:17:37.103650"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:17:37.109396"], ["updated_at", "2015-11-06 14:17:37.109396"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:17:37 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.2ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.2ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (71.6ms)
+Completed 200 OK in 126ms (Views: 77.8ms | ActiveRecord: 1.0ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:17:37 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen_id"=>"1", "type_of_food_id"=>"1", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x00000006d78830 @tempfile=#<Tempfile:/tmp/RackMultipart20151106-27052-1sxyaku.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27052-tbi5ip.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27052-1m8vhnk.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27052-1m8vhnk.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27052-1m8vhnk.JPG[0]' -auto-orient -resize "300x300>" '/tmp/952933ac24c4491219ff6a5499ca55fc20151106-27052-z3lv6l'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27052-1m8vhnk.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27052-1m8vhnk.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27052-1m8vhnk.JPG[0]' -auto-orient -resize "100x100>" '/tmp/952933ac24c4491219ff6a5499ca55fc20151106-27052-4xdyfg'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mKitchen Load (0.2ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTypeOfFood Load (0.1ms)[0m  [1mSELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1[0m  [["id", 1]]
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27052-1e7pewx.JPG'
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-06 14:17:37.317180"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio."], ["created_at", "2015-11-06 14:17:37.471163"], ["updated_at", "2015-11-06 14:17:37.471163"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/1
+Completed 302 Found in 198ms (ActiveRecord: 1.3ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-06 12:17:37 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mKitchen Load (0.1ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTypeOfFood Load (0.1ms)[0m  SELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:17:37 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.3ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.2ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.6ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:17:37 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen_id"=>"", "type_of_food_id"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mKitchen Load (0.2ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.2ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 43ms (Views: 25.5ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:17:37.659367"], ["updated_at", "2015-11-06 14:17:37.659367"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:17:37.664744"], ["updated_at", "2015-11-06 14:17:37.664744"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:17:37.668861"], ["created_at", "2015-11-06 14:17:37.671407"], ["updated_at", "2015-11-06 14:17:37.671407"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:17:37.679506"], ["updated_at", "2015-11-06 14:17:37.679506"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:17:37.684607"], ["updated_at", "2015-11-06 14:17:37.684607"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Picadinho de Carne"], ["kitchen_id", 2], ["type_of_food_id", 2], ["preference", "Bovino"], ["amount", 5], ["time_preparation", 75], ["difficulty", "Médio"], ["ingredients", "200 g de carne\n                              (patinho, alcatra) em tirinhas, 2 linguiças de\n                              churrasco em pedaços, 1 gomo de calabresa em\n                              pedaços, 200 g de bacon em pedaços, 2 pimentões\n                              em tirinhas, azeitona sem caroço, molho de tomate,\n                              milho verde, óleo"], ["preparation", "Frite a carne,\n                              a linguiça, a calabresa e o bacon separados;\n                              Doure os pimentões com óleo (ou da forma que\n                              preferir); Acrescente o bacon, mexendo por mais\n                              uns 3 minutos; Junte a carne, a linguiça e a\n                              calabresa mexendo por 1 minuto; Acrescente o molho\n                              de tomate, azeitona e milho verde mexendo\n                              por 2 minutos"], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:17:37.688806"], ["created_at", "2015-11-06 14:17:37.691354"], ["updated_at", "2015-11-06 14:17:37.691354"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes" for 127.0.0.1 at 2015-11-06 12:17:37 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes"
+  [1m[36mKitchen Load (0.1ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered recipes/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:17:37.720827"], ["updated_at", "2015-11-06 14:17:37.720827"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:17:37.726256"], ["updated_at", "2015-11-06 14:17:37.726256"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:17:37.730307"], ["created_at", "2015-11-06 14:17:37.732863"], ["updated_at", "2015-11-06 14:17:37.732863"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes" for 127.0.0.1 at 2015-11-06 12:17:37 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.7ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-06 12:17:37 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTypeOfFood Load (0.1ms)[0m  [1mSELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+Started GET "/recipes" for 127.0.0.1 at 2015-11-06 12:17:37 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/kitchens/new" for 127.0.0.1 at 2015-11-06 12:18:51 -0200
+Processing by KitchensController#new as HTML
+  Rendered kitchens/new.html.erb within layouts/application (85.7ms)
+Completed 200 OK in 441ms (Views: 413.0ms | ActiveRecord: 0.6ms)
+Started POST "/kitchens" for 127.0.0.1 at 2015-11-06 12:18:51 -0200
+Processing by KitchensController#create as HTML
+  Parameters: {"utf8"=>"✓", "kitchen"=>{"name"=>"Brasileira"}, "commit"=>"Cadastrar Cozinha"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Brasileira"], ["created_at", "2015-11-06 14:18:51.724100"], ["updated_at", "2015-11-06 14:18:51.724100"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/kitchens/1
+Completed 302 Found in 14ms (ActiveRecord: 1.2ms)
+Started GET "/kitchens/1" for 127.0.0.1 at 2015-11-06 12:18:51 -0200
+Processing by KitchensController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mKitchen Load (0.4ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered kitchens/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 4.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/kitchens/new" for 127.0.0.1 at 2015-11-06 12:18:51 -0200
+Processing by KitchensController#new as HTML
+  Rendered kitchens/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+Started POST "/kitchens" for 127.0.0.1 at 2015-11-06 12:18:51 -0200
+Processing by KitchensController#create as HTML
+  Parameters: {"utf8"=>"✓", "kitchen"=>{"name"=>""}, "commit"=>"Cadastrar Cozinha"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered kitchens/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 16ms (Views: 8.1ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 12:18:51 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 23ms (Views: 11.6ms | ActiveRecord: 0.4ms)
+Started POST "/type_of_foods" for 127.0.0.1 at 2015-11-06 12:18:51 -0200
+Processing by TypeOfFoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "type_of_food"=>{"name"=>"Sobremesa"}, "commit"=>"Cadastrar Tipo"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:18:51.855119"], ["updated_at", "2015-11-06 14:18:51.855119"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/type_of_foods/1
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms)
+Started GET "/type_of_foods/1" for 127.0.0.1 at 2015-11-06 12:18:51 -0200
+Processing by TypeOfFoodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTypeOfFood Load (0.3ms)[0m  SELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered type_of_foods/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-06 12:18:51 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+Started POST "/type_of_foods" for 127.0.0.1 at 2015-11-06 12:18:51 -0200
+Processing by TypeOfFoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "type_of_food"=>{"name"=>""}, "commit"=>"Cadastrar Tipo"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered type_of_foods/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 15ms (Views: 7.3ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:18:51.924078"], ["updated_at", "2015-11-06 14:18:51.924078"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:18:51.929462"], ["updated_at", "2015-11-06 14:18:51.929462"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:18:51 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.2ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.3ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 131ms (Views: 77.6ms | ActiveRecord: 1.5ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:18:52 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen_id"=>"1", "type_of_food_id"=>"1", "preference"=>"Sem gluten", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x000000065cc6e0 @tempfile=#<Tempfile:/tmp/RackMultipart20151106-27091-re78qy.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27091-117e8i0.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27091-u0oj63.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27091-u0oj63.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27091-u0oj63.JPG[0]' -auto-orient -resize "300x300>" '/tmp/96f3b1928e6c5f73247bcd5142b9980b20151106-27091-bvo92p'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27091-u0oj63.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27091-u0oj63.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27091-u0oj63.JPG[0]' -auto-orient -resize "100x100>" '/tmp/96f3b1928e6c5f73247bcd5142b9980b20151106-27091-982vu6'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTypeOfFood Load (0.1ms)[0m  [1mSELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1[0m  [["id", 1]]
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151106-27091-11clgve.JPG'
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-06 14:18:52.145423"], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio."], ["created_at", "2015-11-06 14:18:52.308208"], ["updated_at", "2015-11-06 14:18:52.308208"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/1
+Completed 302 Found in 210ms (ActiveRecord: 1.3ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-06 12:18:52 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mKitchen Load (0.1ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTypeOfFood Load (0.5ms)[0m  SELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-06 12:18:52 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.3ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.4ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.7ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-06 12:18:52 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen_id"=>"", "type_of_food_id"=>"", "preference"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mKitchen Load (0.2ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.2ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  Rendered recipes/new.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 53ms (Views: 31.4ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:18:52.505005"], ["updated_at", "2015-11-06 14:18:52.505005"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:18:52.510977"], ["updated_at", "2015-11-06 14:18:52.510977"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:18:52.515703"], ["created_at", "2015-11-06 14:18:52.518653"], ["updated_at", "2015-11-06 14:18:52.518653"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:18:52.528279"], ["updated_at", "2015-11-06 14:18:52.528279"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:18:52.534064"], ["updated_at", "2015-11-06 14:18:52.534064"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Picadinho de Carne"], ["kitchen_id", 2], ["type_of_food_id", 2], ["preference", "Bovino"], ["amount", 5], ["time_preparation", 75], ["difficulty", "Médio"], ["ingredients", "200 g de carne\n                              (patinho, alcatra) em tirinhas, 2 linguiças de\n                              churrasco em pedaços, 1 gomo de calabresa em\n                              pedaços, 200 g de bacon em pedaços, 2 pimentões\n                              em tirinhas, azeitona sem caroço, molho de tomate,\n                              milho verde, óleo"], ["preparation", "Frite a carne,\n                              a linguiça, a calabresa e o bacon separados;\n                              Doure os pimentões com óleo (ou da forma que\n                              preferir); Acrescente o bacon, mexendo por mais\n                              uns 3 minutos; Junte a carne, a linguiça e a\n                              calabresa mexendo por 1 minuto; Acrescente o molho\n                              de tomate, azeitona e milho verde mexendo\n                              por 2 minutos"], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:18:52.541639"], ["created_at", "2015-11-06 14:18:52.544975"], ["updated_at", "2015-11-06 14:18:52.544975"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes" for 127.0.0.1 at 2015-11-06 12:18:52 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mRecipe Load (0.6ms)[0m  SELECT "recipes".* FROM "recipes"
+  [1m[36mKitchen Load (0.1ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered recipes/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-06 14:18:52.577258"], ["updated_at", "2015-11-06 14:18:52.577258"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-06 14:18:52.583347"], ["updated_at", "2015-11-06 14:18:52.583347"]]
+  [1m[35m (14.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference", "Sem gluten"], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-06 14:18:52.601881"], ["created_at", "2015-11-06 14:18:52.604359"], ["updated_at", "2015-11-06 14:18:52.604359"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes" for 127.0.0.1 at 2015-11-06 12:18:52 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.7ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-06 12:18:52 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTypeOfFood Load (0.1ms)[0m  [1mSELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.4ms)
+Started GET "/recipes" for 127.0.0.1 at 2015-11-06 12:18:52 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m

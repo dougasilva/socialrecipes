@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :recipe do
     name 'Pudim de Leite'
     kitchen
-    type_of_food 'Sobremesa'
+    type_of_food
     preference 'Sem gluten'
     amount 5
     time_preparation 45

@@ -1,0 +1,6 @@
+<h1>CADASTRAR TIPO DE COMIDA</h1>
+<p class="error"><%= flash[:error] %></p>
+<%= simple_form_for @typeoffood do |f| %>
+ <%= f.input :name, label: 'Nome:' %>
+ <%= f.button :submit, value: 'Cadastrar Tipo' %>
+<% end %>

@@ -3,11 +3,12 @@ require 'rails_helper'
 feature 'User insert a new recipe' do
   scenario 'successfully' do
     create(:kitchen)
+    create(:type_of_food)
     visit new_recipe_path
 
     fill_in 'Receita:', with: 'Pudim de Leite'
     select('Portuguesa', from: 'Cozinha:')
-    fill_in 'Tipo de Comida:', with: 'Sobremesa'
+    select('Sobremesa', from: 'Tipo de Comida:')
     fill_in 'Preferência de Comida:', with: 'Sem gluten'
     fill_in 'Serve:', with: '5'
     select('Médio', from: 'Dificuldade:')
