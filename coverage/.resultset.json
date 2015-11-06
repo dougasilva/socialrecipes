@@ -49,6 +49,43 @@
         1,
         null
       ],
+      "/home/douglas/workspace/socialrecipes/app/controllers/preferences_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/home/douglas/workspace/socialrecipes/app/models/preference.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/home/douglas/workspace/socialrecipes/app/controllers/type_of_foods_controller.rb": [
         1,
         1,
@@ -131,9 +168,10 @@
         null,
         1,
         1,
+        1,
         null
       ]
     },
-    "timestamp": 1446819532
+    "timestamp": 1446821970
   }
 }

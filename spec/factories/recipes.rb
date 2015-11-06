@@ -3,7 +3,7 @@ FactoryGirl.define do
     name 'Pudim de Leite'
     kitchen
     type_of_food
-    preference 'Sem gluten'
+    preference
     amount 5
     time_preparation 45
     difficulty 'Médio'

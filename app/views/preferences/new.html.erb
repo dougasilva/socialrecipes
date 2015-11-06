@@ -1,0 +1,6 @@
+<h1>CADASTRAR PREFERENCIA DE COMIDA</h1>
+<p class="error"><%= flash[:error] %></p>
+<%= simple_form_for @preference do |f| %>
+ <%= f.input :name, label: 'Nome:' %>
+ <%= f.button :submit, value: 'Cadastrar Preferência' %>
+<% end %>
