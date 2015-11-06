@@ -7,4 +7,5 @@ class Recipe < ActiveRecord::Base
                                                              'image/jpeg',
                                                              'image/png',
                                                              'image/gif'] }
+  belongs_to :kitchen
 end

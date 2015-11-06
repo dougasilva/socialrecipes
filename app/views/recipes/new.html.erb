@@ -2,7 +2,8 @@
 <p class="error"><%= flash[:error] %></p>
 <%= simple_form_for @recipe, html: {multipart: true} do |f| %>
  <%= f.input :name, label: 'Receita:' %>
- <%= f.input :kitchen, label: 'Cozinha:' %>
+ <%= f.association :kitchen, label: 'Cozinha:', label_method: :name,
+                    value_method: :id %>
  <%= f.input :type_of_food, label: 'Tipo de Comida:' %>
  <%= f.input :preference, label: 'Preferência de Comida:' %>
  <%= f.input :amount, label: 'Serve:' %>

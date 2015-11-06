@@ -1285,3 +1285,309 @@ Started GET "/recipes/new" for 127.0.0.1 at 2015-11-05 18:11:07 -0200
 Processing by RecipesController#new as HTML
   Rendered recipes/new.html.erb within layouts/application (36.9ms)
 Completed 200 OK in 86ms (Views: 85.0ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateKitchens (20151106092915)
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (4.1ms)[0m  [1mCREATE TABLE "kitchens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106092915"]]
+  [1m[36m (116.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveKitchenFromRecipes (20151106115716)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "recipes"
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "arecipes" ("id","name","kitchen","type_of_food","preference","amount","time_preparation","difficulty","ingredients","preparation","created_at","updated_at","foto_file_name","foto_content_type","foto_file_size","foto_updated_at") VALUES (1, 'Pudim de Leite', 'Portuguesa', 'Doce', 'sem glutem', 5, 45, 'Médio', 'sdfggfsdgdfgsdfgfg', 'dfhgdfghsdfhgsdfghdfg', '2015-11-05 18:16:11.876670', '2015-11-05 18:16:11.876670', 'Pudim.JPG', 'image/jpeg', 16759, '2015-11-05 18:16:11.717025')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "arecipes" ("id","name","kitchen","type_of_food","preference","amount","time_preparation","difficulty","ingredients","preparation","created_at","updated_at","foto_file_name","foto_content_type","foto_file_size","foto_updated_at") VALUES (2, 'carne de panela', 'brasilewira', 'carne', 'bovina', 5, 75, 'Fácil', 'dfggfdfgdsdfgdfgdsgfdgsdfgfvbdfvsdfvsd', 'rgfhgtrhgfhdfghfd', '2015-11-05 19:39:31.354888', '2015-11-05 19:39:31.354888', 'picadinho_de_carnes.jpg', 'image/jpeg', 52703, '2015-11-05 19:39:31.179163')
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "recipes"[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "arecipes"[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "recipes" ("id","name","type_of_food","preference","amount","time_preparation","difficulty","ingredients","preparation","created_at","updated_at","foto_file_name","foto_content_type","foto_file_size","foto_updated_at") VALUES (1, 'Pudim de Leite', 'Doce', 'sem glutem', 5, 45, 'Médio', 'sdfggfsdgdfgsdfgfg', 'dfhgdfghsdfhgsdfghdfg', '2015-11-05 18:16:11.876670', '2015-11-05 18:16:11.876670', 'Pudim.JPG', 'image/jpeg', 16759, '2015-11-05 18:16:11.717025')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "recipes" ("id","name","type_of_food","preference","amount","time_preparation","difficulty","ingredients","preparation","created_at","updated_at","foto_file_name","foto_content_type","foto_file_size","foto_updated_at") VALUES (2, 'carne de panela', 'carne', 'bovina', 5, 75, 'Fácil', 'dfggfdfgdsdfgdfgdsgfdgsdfgfvbdfvsdfvsd', 'rgfhgtrhgfhdfghfd', '2015-11-05 19:39:31.354888', '2015-11-05 19:39:31.354888', 'picadinho_de_carnes.jpg', 'image/jpeg', 52703, '2015-11-05 19:39:31.179163')[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "arecipes"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151106115716"]]
+  [1m[35m (78.5ms)[0m  commit transaction
+Migrating to AddKitchenToRecipes (20151106115924)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "recipes" ADD "kitchen" reference
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151106115924"]]
+  [1m[35m (79.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (74.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  select sqlite_version(*)
+  [1m[36m (90.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRecipes (20151105171933)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151105171933"]]
+  [1m[35m (80.6ms)[0m  commit transaction
+Migrating to AddAttachmentFotoToRecipes (20151105172621)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "recipes" ADD "foto_file_name" varchar
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "recipes" ADD "foto_content_type" varchar[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "recipes" ADD "foto_file_size" integer
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "recipes" ADD "foto_updated_at" datetime[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151105172621"]]
+  [1m[36m (92.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateKitchens (20151106092915)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "kitchens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106092915"]]
+  [1m[36m (95.5ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveKitchenFromRecipes (20151106115716)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "recipes"
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "recipes"[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) 
+  [1m[36m (0.3ms)[0m  [1mSELECT * FROM "arecipes"[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "arecipes"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151106115716"]]
+  [1m[35m (81.5ms)[0m  commit transaction
+Migrating to AddKitchenToRecipes (20151106115924)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "recipes" ADD "kitchen" reference
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151106115924"]]
+  [1m[35m (87.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (96.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (100.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRecipes (20151105171933)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151105171933"]]
+  [1m[35m (86.2ms)[0m  commit transaction
+Migrating to AddAttachmentFotoToRecipes (20151105172621)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "recipes" ADD "foto_file_name" varchar
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "recipes" ADD "foto_content_type" varchar[0m
+  [1m[35m (1.5ms)[0m  ALTER TABLE "recipes" ADD "foto_file_size" integer
+  [1m[36m (4.7ms)[0m  [1mALTER TABLE "recipes" ADD "foto_updated_at" datetime[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151105172621"]]
+  [1m[36m (86.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateKitchens (20151106092915)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "kitchens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106092915"]]
+  [1m[36m (94.5ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveKitchenFromRecipes (20151106115716)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "recipes"
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "recipes"[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) 
+  [1m[36m (0.5ms)[0m  [1mSELECT * FROM "arecipes"[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "arecipes"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151106115716"]]
+  [1m[35m (93.6ms)[0m  commit transaction
+Migrating to AddKitchenToRecipes (20151106115924)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "recipes" ADD "kitchen" reference
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151106115924"]]
+  [1m[35m (70.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (91.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (90.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRecipes (20151105171933)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151105171933"]]
+  [1m[35m (94.4ms)[0m  commit transaction
+Migrating to AddAttachmentFotoToRecipes (20151105172621)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "recipes" ADD "foto_file_name" varchar
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "recipes" ADD "foto_content_type" varchar[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "recipes" ADD "foto_file_size" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "recipes" ADD "foto_updated_at" datetime[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151105172621"]]
+  [1m[36m (93.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateKitchens (20151106092915)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "kitchens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106092915"]]
+  [1m[36m (91.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveKitchenFromRecipes (20151106120741)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) [0m
+  [1m[35m (0.3ms)[0m  SELECT * FROM "recipes"
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "recipes"[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "arecipes"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "arecipes"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151106120741"]]
+  [1m[35m (96.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddKitchensToRecipes (20151106120904)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "recipes" ADD "kitchens" reference[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106120904"]]
+  [1m[36m (97.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (88.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (90.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRecipes (20151105171933)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151105171933"]]
+  [1m[35m (70.7ms)[0m  commit transaction
+Migrating to AddAttachmentFotoToRecipes (20151105172621)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "recipes" ADD "foto_file_name" varchar
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "recipes" ADD "foto_content_type" varchar[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "recipes" ADD "foto_file_size" integer
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "recipes" ADD "foto_updated_at" datetime[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151105172621"]]
+  [1m[36m (92.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateKitchens (20151106092915)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "kitchens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106092915"]]
+  [1m[36m (94.6ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveKitchenFromRecipes (20151106120741)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "recipes"
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "recipes"[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) 
+  [1m[36m (0.3ms)[0m  [1mSELECT * FROM "arecipes"[0m
+  [1m[35m (0.6ms)[0m  DROP TABLE "arecipes"
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151106120741"]]
+  [1m[35m (76.5ms)[0m  commit transaction
+Migrating to AddKitchensToRecipes (20151106120904)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "recipes" ADD "kitchens" reference
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151106120904"]]
+  [1m[35m (94.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (98.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (90.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRecipes (20151105171933)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151105171933"]]
+  [1m[35m (85.0ms)[0m  commit transaction
+Migrating to AddAttachmentFotoToRecipes (20151105172621)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "recipes" ADD "foto_file_name" varchar
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "recipes" ADD "foto_content_type" varchar[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "recipes" ADD "foto_file_size" integer
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "recipes" ADD "foto_updated_at" datetime[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151105172621"]]
+  [1m[36m (92.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateKitchens (20151106092915)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "kitchens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106092915"]]
+  [1m[36m (104.1ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveKitchenFromRecipes (20151106120741)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "recipes"
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "recipes"[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) 
+  [1m[36m (0.3ms)[0m  [1mSELECT * FROM "arecipes"[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "arecipes"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151106120741"]]
+  [1m[35m (87.0ms)[0m  commit transaction
+Migrating to AddKitchensToRecipes (20151106120904)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "recipes" ADD "kitchens_id" integer
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151106120904"]]
+  [1m[35m (102.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (94.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (90.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRecipes (20151105171933)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151105171933"]]
+  [1m[35m (72.4ms)[0m  commit transaction
+Migrating to AddAttachmentFotoToRecipes (20151105172621)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "recipes" ADD "foto_file_name" varchar
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "recipes" ADD "foto_content_type" varchar[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "recipes" ADD "foto_file_size" integer
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "recipes" ADD "foto_updated_at" datetime[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151105172621"]]
+  [1m[36m (84.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateKitchens (20151106092915)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "kitchens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106092915"]]
+  [1m[36m (78.7ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveKitchenFromRecipes (20151106120741)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "recipes"
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "recipes"[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "arecipes"[0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "arecipes"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151106120741"]]
+  [1m[35m (87.6ms)[0m  commit transaction
+Migrating to AddKitchensRefRecipes (20151106122825)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106122825"]]
+  [1m[36m (88.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (91.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (90.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateRecipes (20151105171933)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151105171933"]]
+  [1m[35m (73.6ms)[0m  commit transaction
+Migrating to AddAttachmentFotoToRecipes (20151105172621)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "recipes" ADD "foto_file_name" varchar
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "recipes" ADD "foto_content_type" varchar[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "recipes" ADD "foto_file_size" integer
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "recipes" ADD "foto_updated_at" datetime[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151105172621"]]
+  [1m[36m (91.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateKitchens (20151106092915)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "kitchens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106092915"]]
+  [1m[36m (78.2ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveKitchenFromRecipes (20151106120741)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "kitchen" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) [0m
+  [1m[35m (0.3ms)[0m  SELECT * FROM "recipes"
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "recipes"[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "type_of_food" varchar, "preference" varchar, "amount" integer, "time_preparation" integer, "difficulty" varchar, "ingredients" text, "preparation" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "foto_file_name" varchar, "foto_content_type" varchar, "foto_file_size" integer, "foto_updated_at" datetime) 
+  [1m[36m (0.4ms)[0m  [1mSELECT * FROM "arecipes"[0m
+  [1m[35m (0.6ms)[0m  DROP TABLE "arecipes"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151106120741"]]
+  [1m[35m (87.7ms)[0m  commit transaction
+Migrating to AddKitchensRefRecipes (20151106122825)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "recipes" ADD "kitchen_id" integer
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_recipes_on_kitchen_id" ON "recipes" ("kitchen_id")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151106122825"]]
+  [1m[36m (101.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recipes_on_kitchen_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recipes_on_kitchen_id' AND type='index'
+[0m
