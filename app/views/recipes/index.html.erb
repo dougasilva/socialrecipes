@@ -1,11 +1,40 @@
 <h1>RECEITAS</h1>
-<%if @recipes.any? %>
-  <% @recipes.each do |recipe| %>
-    <%= link_to recipe.name, recipe %><br>
-    <%= recipe.preference.name %><br>
-    <%= recipe.kitchen.name %><br>
-    <%= recipe.difficulty %><br>
+<section id="recipes">
+  <%if @recipes.any? %>
+    <% @recipes.each do |recipe| %>
+      <%= link_to recipe.name, recipe %><br>
+      <%= recipe.preference.name %><br>
+      <%= recipe.kitchen.name %><br>
+      <%= recipe.difficulty %><br>
+    <% end %>
+  <% else %>
+    <p>Sem receitas cadastradas.</p>
   <% end %>
-<% else %>
-  <p>Sem receitas cadastradas.</p>
-<% end %>
+</section>
+<section id="kitchens">
+  <%if @kitchens.any? %>
+    <% @kitchens.each do |kitchen| %>
+      <%= link_to kitchen.name, kitchen %><br>
+    <% end %>
+  <% else %>
+    <p>Sem cozinhas cadastradas.</p>
+  <% end %>
+</section>
+<section id="type_of_food">
+  <%if @typeoffoods.any? %>
+    <% @typeoffoods.each do |typeoffood| %>
+      <%= link_to typeoffood.name, typeoffood %><br>
+    <% end %>
+  <% else %>
+    <p>Sem tipos cadastrados.</p>
+  <% end %>
+</section>
+<section id="preference">
+  <%if @preferences.any? %>
+    <% @preferences.each do |preference| %>
+      <%= link_to preference.name, preference %><br>
+    <% end %>
+  <% else %>
+    <p>Sem preferencias cadastradas.</p>
+  <% end %>
+</section>

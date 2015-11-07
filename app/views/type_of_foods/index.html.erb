@@ -1,0 +1,10 @@
+<h1>TIPOS</h1>
+<section id="type_of_food">
+  <%if @typeoffoods.any? %>
+    <% @typeoffoods.each do |typeoffood| %>
+      <%= link_to typeoffood.name, typeoffood %><br>
+    <% end %>
+  <% else %>
+    <p>Sem tipos cadastradss.</p>
+  <% end %>
+</section>

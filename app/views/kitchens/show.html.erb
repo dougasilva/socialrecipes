@@ -1,2 +1,9 @@
 <h1>COZINHAS</h1>
-<%= @kitchen.name %><br>
+<h2><%= @kitchen.name %></h2><br>
+
+<% @kitchen.recipe.each do |recipe| %>
+  <%= link_to recipe.name, recipe %><br>
+  <%= recipe.preference.name %><br>
+  <%= recipe.kitchen.name %><br>
+  <%= recipe.difficulty %><br>
+<% end %>

@@ -22,7 +22,7 @@
         null,
         null,
         1,
-        1,
+        2,
         null,
         null,
         1,
@@ -49,6 +49,21 @@
         1,
         null
       ],
+      "/home/douglas/workspace/socialrecipes/app/models/recipe.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null
+      ],
       "/home/douglas/workspace/socialrecipes/app/controllers/preferences_controller.rb": [
         1,
         1,
@@ -66,7 +81,7 @@
         null,
         null,
         1,
-        1,
+        2,
         null,
         null,
         1,
@@ -103,7 +118,7 @@
         null,
         null,
         1,
-        1,
+        2,
         null,
         null,
         1,
@@ -144,7 +159,10 @@
         null,
         null,
         1,
-        5,
+        8,
+        8,
+        8,
+        8,
         null,
         null,
         1,
@@ -155,24 +173,8 @@
         null,
         null,
         null
-      ],
-      "/home/douglas/workspace/socialrecipes/app/models/recipe.rb": [
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1446837604
+    "timestamp": 1446864624
   }
 }
