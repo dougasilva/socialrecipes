@@ -1,2 +1,9 @@
 <h1>PREFERENCIA</h1>
-<%= @preference.name %><br>
+<h2><%= @preference.name %></h2><br>
+
+<% @preference.recipe.each do |recipe| %>
+  <%= link_to recipe.name, recipe %><br>
+  <%= recipe.preference.name %><br>
+  <%= recipe.kitchen.name %><br>
+  <%= recipe.difficulty %><br>
+<% end %>

@@ -19,6 +19,9 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.order('created_at DESC').limit(20)
+    @kitchens = Kitchen.all
+    @typeoffoods = TypeOfFood.all
+    @preferences = Preference.all
   end
 
   private

@@ -1,5 +1,4 @@
 class Recipe < ActiveRecord::Base
-  paginates_per 20
   validates :name, :kitchen, :type_of_food, :preference, :ingredients,
             :preparation, presence: true
 
