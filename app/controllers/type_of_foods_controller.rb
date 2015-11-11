@@ -1,12 +1,12 @@
 class TypeOfFoodsController < ApplicationController
   def new
-    @typeoffood = TypeOfFood.new
+    @type_of_food = TypeOfFood.new
   end
 
   def create
-    @typeoffood = TypeOfFood.create(typeoffood_params)
-    if @typeoffood.save
-      redirect_to @typeoffood
+    @type_of_food = TypeOfFood.new(typeoffood_params)
+    if @type_of_food.save
+      redirect_to @type_of_food
     else
       flash.now[:error] = 'Por favor, verifique os dados obrigatórios'
       render 'new'
@@ -14,11 +14,11 @@ class TypeOfFoodsController < ApplicationController
   end
 
   def show
-    @typeoffood = TypeOfFood.find(params[:id])
+    @type_of_food = TypeOfFood.find(params[:id])
   end
 
   def index
-    @typeoffoods = TypeOfFood.all
+    @type_of_foods = TypeOfFood.all
   end
 
   private

@@ -4,7 +4,7 @@ class PreferencesController < ApplicationController
   end
 
   def create
-    @preference = Preference.create(preference_params)
+    @preference = Preference.new(preference_params)
     if @preference.save
       redirect_to @preference
     else

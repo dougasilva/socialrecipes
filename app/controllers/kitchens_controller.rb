@@ -4,7 +4,7 @@ class KitchensController < ApplicationController
   end
 
   def create
-    @kitchen = Kitchen.create(kitchen_params)
+    @kitchen = Kitchen.new(kitchen_params)
     if @kitchen.save
       redirect_to @kitchen
     else

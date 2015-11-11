@@ -1,7 +1,7 @@
 <h1>TIPOS DE COMIDA</h1>
-<h2><%= @typeoffood.name %></h2><br>
+<h2><%= @type_of_food.name %></h2><br>
 
-<% @typeoffood.recipe.each do |recipe| %>
+<% @type_of_food.recipe.each do |recipe| %>
   <%= link_to recipe.name, recipe %><br>
   <%= recipe.preference.name %><br>
   <%= recipe.kitchen.name %><br>

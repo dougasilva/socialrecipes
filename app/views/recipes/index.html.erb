@@ -12,6 +12,7 @@
   <% end %>
 </section>
 <section id="kitchens">
+  <h3>Cozinhas</h3>
   <%if @kitchens.any? %>
     <% @kitchens.each do |kitchen| %>
       <%= link_to kitchen.name, kitchen %><br>
@@ -21,6 +22,7 @@
   <% end %>
 </section>
 <section id="type_of_food">
+  <h3>Tipos de Comida</h3>
   <%if @typeoffoods.any? %>
     <% @typeoffoods.each do |typeoffood| %>
       <%= link_to typeoffood.name, typeoffood %><br>
@@ -30,6 +32,7 @@
   <% end %>
 </section>
 <section id="preference">
+  <h3>Preferencias</h3>
   <%if @preferences.any? %>
     <% @preferences.each do |preference| %>
       <%= link_to preference.name, preference %><br>
