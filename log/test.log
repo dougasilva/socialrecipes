@@ -29770,3 +29770,818 @@ Processing by RecipesController#show as HTML
   Rendered recipes/show.html.erb within layouts/application (0.5ms)
 Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.1ms)
   [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/kitchens/new" for 127.0.0.1 at 2015-11-11 19:29:54 -0200
+Processing by KitchensController#new as HTML
+  Rendered kitchens/new.html.erb within layouts/application (107.4ms)
+Completed 200 OK in 458ms (Views: 440.3ms | ActiveRecord: 0.3ms)
+Started POST "/kitchens" for 127.0.0.1 at 2015-11-11 19:29:54 -0200
+Processing by KitchensController#create as HTML
+  Parameters: {"utf8"=>"✓", "kitchen"=>{"name"=>"Brasileira"}, "commit"=>"Cadastrar Cozinha"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Brasileira"], ["created_at", "2015-11-11 21:29:54.952479"], ["updated_at", "2015-11-11 21:29:54.952479"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/kitchens/1
+Completed 302 Found in 17ms (ActiveRecord: 0.4ms)
+Started GET "/kitchens/1" for 127.0.0.1 at 2015-11-11 19:29:54 -0200
+Processing by KitchensController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."kitchen_id" = ?[0m  [["kitchen_id", 1]]
+  Rendered kitchens/show.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 96ms (Views: 47.8ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/kitchens/new" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by KitchensController#new as HTML
+  Rendered kitchens/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/kitchens" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by KitchensController#create as HTML
+  Parameters: {"utf8"=>"✓", "kitchen"=>{"name"=>""}, "commit"=>"Cadastrar Cozinha"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered kitchens/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/preferences/new" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by PreferencesController#new as HTML
+  Rendered preferences/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 10ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+Started POST "/preferences" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by PreferencesController#create as HTML
+  Parameters: {"utf8"=>"✓", "preference"=>{"name"=>"Sem gluten"}, "commit"=>"Cadastrar Preferência"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:55.113643"], ["updated_at", "2015-11-11 21:29:55.113643"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/preferences/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/preferences/1" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by PreferencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPreference Load (0.1ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."preference_id" = ?  [["preference_id", 1]]
+  Rendered preferences/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/preferences/new" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by PreferencesController#new as HTML
+  Rendered preferences/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+Started POST "/preferences" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by PreferencesController#create as HTML
+  Parameters: {"utf8"=>"✓", "preference"=>{"name"=>""}, "commit"=>"Cadastrar Preferência"}
+  [1m[36m (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered preferences/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 13ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+Started POST "/type_of_foods" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by TypeOfFoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "type_of_food"=>{"name"=>"Sobremesa"}, "commit"=>"Cadastrar Tipo"}
+  [1m[36m (1.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:55.200674"], ["updated_at", "2015-11-11 21:29:55.200674"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/type_of_foods/1
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+Started GET "/type_of_foods/1" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by TypeOfFoodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTypeOfFood Load (0.1ms)[0m  SELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."type_of_food_id" = ?[0m  [["type_of_food_id", 1]]
+  Rendered type_of_foods/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/type_of_foods/new" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by TypeOfFoodsController#new as HTML
+  Rendered type_of_foods/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started POST "/type_of_foods" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by TypeOfFoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "type_of_food"=>{"name"=>""}, "commit"=>"Cadastrar Tipo"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered type_of_foods/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" LIMIT 20) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "kitchens"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "type_of_foods"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "preferences"[0m
+  Rendered recipes/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:55.268447"], ["updated_at", "2015-11-11 21:29:55.268447"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:55.270886"], ["updated_at", "2015-11-11 21:29:55.270886"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:55.273104"], ["updated_at", "2015-11-11 21:29:55.273104"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by RecipesController#new as HTML
+  [1m[36mKitchen Load (0.1ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.1ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  [1m[36mPreference Load (0.1ms)[0m  [1mSELECT "preferences".* FROM "preferences"[0m
+  Rendered recipes/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 45ms (Views: 27.8ms | ActiveRecord: 0.5ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"Pudim de Leite", "kitchen_id"=>"1", "type_of_food_id"=>"1", "preference_id"=>"1", "amount"=>"5", "time_preparation"=>"45", "difficulty"=>"Médio", "ingredients"=>"1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas", "preparation"=>"Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio.", "foto"=>#<ActionDispatch::Http::UploadedFile:0x00000007e27a78 @tempfile=#<Tempfile:/tmp/RackMultipart20151111-2730-ayub6o.JPG>, @original_filename="Pudim.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[foto]\"; filename=\"Pudim.JPG\"\r\nContent-Type: image/jpeg\r\nContent-Length: 16759\r\n">}, "commit"=>"Cadastrar Receita"}
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151111-2730-wytbhm.JPG'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151111-2730-jtgh3a.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151111-2730-jtgh3a.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151111-2730-jtgh3a.JPG[0]' -auto-orient -resize "300x300>" '/tmp/69be3ded60d23f55c8ba35db5400785020151111-2730-1ilac1g'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/c6b0faa95ed39edccefe99bbae27c99620151111-2730-jtgh3a.JPG[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/c6b0faa95ed39edccefe99bbae27c99620151111-2730-jtgh3a.JPG[0]'
+Command :: convert '/tmp/c6b0faa95ed39edccefe99bbae27c99620151111-2730-jtgh3a.JPG[0]' -auto-orient -resize "100x100>" '/tmp/69be3ded60d23f55c8ba35db5400785020151111-2730-19o1g29'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mKitchen Load (0.1ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTypeOfFood Load (0.0ms)[0m  SELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPreference Load (0.0ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 1]]
+Command :: file -b --mime '/tmp/c6b0faa95ed39edccefe99bbae27c99620151111-2730-1umcie2.JPG'
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 16759], ["foto_updated_at", "2015-11-11 21:29:55.345844"], ["preference_id", 1], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa\r\n                                   Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no\r\n                                     liquidificador, após coloque o creme em\r\n                                     uma forma untada com melado (açúcar\r\n                                     derretido com água) e leve ao banho-maria\r\n                                     por 40 minutos. Sirva frio."], ["created_at", "2015-11-11 21:29:55.918410"], ["updated_at", "2015-11-11 21:29:55.918410"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/1
+Completed 302 Found in 582ms (ActiveRecord: 0.5ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mKitchen Load (0.1ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTypeOfFood Load (0.0ms)[0m  SELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPreference Load (0.0ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by RecipesController#new as HTML
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36mTypeOfFood Load (0.1ms)[0m  [1mSELECT "type_of_foods".* FROM "type_of_foods"[0m
+  [1m[35mPreference Load (0.1ms)[0m  SELECT "preferences".* FROM "preferences"
+  Rendered recipes/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.3ms)
+Started POST "/recipes" for 127.0.0.1 at 2015-11-11 19:29:55 -0200
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"name"=>"", "kitchen_id"=>"", "type_of_food_id"=>"", "preference_id"=>"", "amount"=>"", "time_preparation"=>"", "difficulty"=>"", "ingredients"=>"", "preparation"=>""}, "commit"=>"Cadastrar Receita"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mKitchen Load (0.1ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35mTypeOfFood Load (0.1ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  [1m[36mPreference Load (0.1ms)[0m  [1mSELECT "preferences".* FROM "preferences"[0m
+  Rendered recipes/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Brasileira"], ["created_at", "2015-11-11 21:29:55.989287"], ["updated_at", "2015-11-11 21:29:55.989287"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:55.991593"], ["updated_at", "2015-11-11 21:29:55.991593"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:55.993341"], ["updated_at", "2015-11-11 21:29:55.993341"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:55.995060"], ["updated_at", "2015-11-11 21:29:55.995060"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 2], ["type_of_food_id", 1], ["preference_id", 1], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:55.996393"], ["created_at", "2015-11-11 21:29:55.997487"], ["updated_at", "2015-11-11 21:29:55.997487"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.000082"], ["updated_at", "2015-11-11 21:29:56.000082"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.001814"], ["updated_at", "2015-11-11 21:29:56.001814"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Bolo de Cenoura"], ["kitchen_id", 1], ["type_of_food_id", 2], ["preference_id", 2], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.003129"], ["created_at", "2015-11-11 21:29:56.004098"], ["updated_at", "2015-11-11 21:29:56.004098"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.006508"], ["updated_at", "2015-11-11 21:29:56.006508"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.008804"], ["updated_at", "2015-11-11 21:29:56.008804"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Feijoada"], ["kitchen_id", 1], ["type_of_food_id", 3], ["preference_id", 3], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.012433"], ["created_at", "2015-11-11 21:29:56.013982"], ["updated_at", "2015-11-11 21:29:56.013982"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes" for 127.0.0.1 at 2015-11-11 19:29:56 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" LIMIT 20) subquery_for_count[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY created_at DESC LIMIT 20
+  [1m[36mPreference Load (0.0ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mKitchen Load (0.0ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPreference Load (0.0ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mPreference Load (0.0ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.0ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "kitchens"[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "type_of_foods"[0m
+  [1m[35mTypeOfFood Load (0.1ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "preferences"[0m
+  [1m[35mPreference Load (0.1ms)[0m  SELECT "preferences".* FROM "preferences"
+  Rendered recipes/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.9ms)
+Started GET "/kitchens/1" for 127.0.0.1 at 2015-11-11 19:29:56 -0200
+Processing by KitchensController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKitchen Load (0.1ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."kitchen_id" = ?  [["kitchen_id", 1]]
+  [1m[36mPreference Load (0.0ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPreference Load (0.0ms)[0m  SELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered kitchens/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Salada"], ["created_at", "2015-11-11 21:29:56.037414"], ["updated_at", "2015-11-11 21:29:56.037414"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.040894"], ["updated_at", "2015-11-11 21:29:56.040894"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.044691"], ["updated_at", "2015-11-11 21:29:56.044691"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.046356"], ["updated_at", "2015-11-11 21:29:56.046356"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 2], ["preference_id", 1], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.047821"], ["created_at", "2015-11-11 21:29:56.048909"], ["updated_at", "2015-11-11 21:29:56.048909"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.051370"], ["updated_at", "2015-11-11 21:29:56.051370"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.053179"], ["updated_at", "2015-11-11 21:29:56.053179"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Couve Refogada"], ["kitchen_id", 2], ["type_of_food_id", 1], ["preference_id", 2], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.054470"], ["created_at", "2015-11-11 21:29:56.055426"], ["updated_at", "2015-11-11 21:29:56.055426"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.057779"], ["updated_at", "2015-11-11 21:29:56.057779"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.059516"], ["updated_at", "2015-11-11 21:29:56.059516"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Couve Flor"], ["kitchen_id", 3], ["type_of_food_id", 1], ["preference_id", 3], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.060833"], ["created_at", "2015-11-11 21:29:56.061782"], ["updated_at", "2015-11-11 21:29:56.061782"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/recipes" for 127.0.0.1 at 2015-11-11 19:29:56 -0200
+Processing by RecipesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" LIMIT 20) subquery_for_count
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes"  ORDER BY created_at DESC LIMIT 20[0m
+  [1m[35mPreference Load (0.0ms)[0m  SELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mKitchen Load (0.0ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mPreference Load (0.0ms)[0m  SELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mKitchen Load (0.0ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPreference Load (0.0ms)[0m  SELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mKitchen Load (0.0ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "kitchens"
+  [1m[36mKitchen Load (0.1ms)[0m  [1mSELECT "kitchens".* FROM "kitchens"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "type_of_foods"
+  [1m[36mTypeOfFood Load (0.1ms)[0m  [1mSELECT "type_of_foods".* FROM "type_of_foods"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "preferences"
+  [1m[36mPreference Load (0.1ms)[0m  [1mSELECT "preferences".* FROM "preferences"[0m
+  Rendered recipes/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.9ms)
+Started GET "/type_of_foods/1" for 127.0.0.1 at 2015-11-11 19:29:56 -0200
+Processing by TypeOfFoodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTypeOfFood Load (0.1ms)[0m  SELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."type_of_food_id" = ?[0m  [["type_of_food_id", 1]]
+  [1m[35mPreference Load (0.0ms)[0m  SELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mKitchen Load (0.0ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPreference Load (0.0ms)[0m  SELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mKitchen Load (0.0ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered type_of_foods/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Vegetariana"], ["created_at", "2015-11-11 21:29:56.085552"], ["updated_at", "2015-11-11 21:29:56.085552"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.087578"], ["updated_at", "2015-11-11 21:29:56.087578"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.089406"], ["updated_at", "2015-11-11 21:29:56.089406"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.091056"], ["updated_at", "2015-11-11 21:29:56.091056"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference_id", 2], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.092404"], ["created_at", "2015-11-11 21:29:56.093419"], ["updated_at", "2015-11-11 21:29:56.093419"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.096361"], ["updated_at", "2015-11-11 21:29:56.096361"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.098107"], ["updated_at", "2015-11-11 21:29:56.098107"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Abobrinha"], ["kitchen_id", 2], ["type_of_food_id", 2], ["preference_id", 1], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.099431"], ["created_at", "2015-11-11 21:29:56.100436"], ["updated_at", "2015-11-11 21:29:56.100436"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.102741"], ["updated_at", "2015-11-11 21:29:56.102741"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.104375"], ["updated_at", "2015-11-11 21:29:56.104375"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Couve Flor"], ["kitchen_id", 3], ["type_of_food_id", 3], ["preference_id", 1], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.105691"], ["created_at", "2015-11-11 21:29:56.106612"], ["updated_at", "2015-11-11 21:29:56.106612"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes" for 127.0.0.1 at 2015-11-11 19:29:56 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" LIMIT 20) subquery_for_count[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY created_at DESC LIMIT 20
+  [1m[36mPreference Load (0.1ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.2ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.0ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPreference Load (0.0ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mKitchen Load (0.0ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "kitchens"[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "type_of_foods"[0m
+  [1m[35mTypeOfFood Load (0.1ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "preferences"[0m
+  [1m[35mPreference Load (0.1ms)[0m  SELECT "preferences".* FROM "preferences"
+  Rendered recipes/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 1.2ms)
+Started GET "/preferences/1" for 127.0.0.1 at 2015-11-11 19:29:56 -0200
+Processing by PreferencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPreference Load (0.1ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."preference_id" = ?  [["preference_id", 1]]
+  [1m[36mKitchen Load (0.0ms)[0m  [1mSELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mKitchen Load (0.0ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered preferences/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.132591"], ["updated_at", "2015-11-11 21:29:56.132591"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.134552"], ["updated_at", "2015-11-11 21:29:56.134552"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.136353"], ["updated_at", "2015-11-11 21:29:56.136353"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference_id", 1], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.137675"], ["created_at", "2015-11-11 21:29:56.138672"], ["updated_at", "2015-11-11 21:29:56.138672"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.141354"], ["updated_at", "2015-11-11 21:29:56.141354"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.143827"], ["updated_at", "2015-11-11 21:29:56.143827"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.148107"], ["updated_at", "2015-11-11 21:29:56.148107"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Picadinho de Carne"], ["kitchen_id", 2], ["type_of_food_id", 2], ["preference_id", 2], ["amount", 5], ["time_preparation", 75], ["difficulty", "Médio"], ["ingredients", "200 g de carne (patinho, alcatra)\n                              em tirinhas, 2 linguiças de churrasco em pedaços,\n                              1 gomo de calabresa em pedaços, 200 g de bacon em\n                              pedaços, 2 pimentões em tirinhas, azeitona sem\n                              caroço, molho de tomate, milho verde, óleo"], ["preparation", "Frite a carne, a linguiça, a\n                              calabresa e o bacon separados; Doure os pimentões\n                              com óleo (ou da forma que preferir); Acrescente o\n                              bacon, mexendo por mais uns 3 minutos; Junte a\n                              carne, a linguiça e a calabresa mexendo por 1\n                              minuto; Acrescente o molho de tomate, azeitona e\n                              milho verde mexendo por 2 minutos"], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.149569"], ["created_at", "2015-11-11 21:29:56.150532"], ["updated_at", "2015-11-11 21:29:56.150532"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes" for 127.0.0.1 at 2015-11-11 19:29:56 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" LIMIT 20) subquery_for_count[0m
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY created_at DESC LIMIT 20
+  [1m[36mPreference Load (0.0ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mKitchen Load (0.0ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPreference Load (0.0ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.0ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "kitchens"[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "type_of_foods"[0m
+  [1m[35mTypeOfFood Load (0.1ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "preferences"[0m
+  [1m[35mPreference Load (0.1ms)[0m  SELECT "preferences".* FROM "preferences"
+  Rendered recipes/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.165454"], ["updated_at", "2015-11-11 21:29:56.165454"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.167356"], ["updated_at", "2015-11-11 21:29:56.167356"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.169196"], ["updated_at", "2015-11-11 21:29:56.169196"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference_id", 1], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.170573"], ["created_at", "2015-11-11 21:29:56.171595"], ["updated_at", "2015-11-11 21:29:56.171595"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/recipes" for 127.0.0.1 at 2015-11-11 19:29:56 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" LIMIT 20) subquery_for_count[0m
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY created_at DESC LIMIT 20
+  [1m[36mPreference Load (0.1ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.0ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "kitchens"[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "type_of_foods"[0m
+  [1m[35mTypeOfFood Load (0.1ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "preferences"[0m
+  [1m[35mPreference Load (0.1ms)[0m  SELECT "preferences".* FROM "preferences"
+  Rendered recipes/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.8ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2015-11-11 19:29:56 -0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.0ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTypeOfFood Load (0.0ms)[0m  [1mSELECT  "type_of_foods".* FROM "type_of_foods" WHERE "type_of_foods"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPreference Load (0.0ms)[0m  SELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+Started GET "/recipes" for 127.0.0.1 at 2015-11-11 19:29:56 -0200
+Processing by RecipesController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" LIMIT 20) subquery_for_count[0m
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes"  ORDER BY created_at DESC LIMIT 20
+  [1m[36mPreference Load (0.0ms)[0m  [1mSELECT  "preferences".* FROM "preferences" WHERE "preferences"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mKitchen Load (0.0ms)[0m  SELECT  "kitchens".* FROM "kitchens" WHERE "kitchens"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "kitchens"[0m
+  [1m[35mKitchen Load (0.1ms)[0m  SELECT "kitchens".* FROM "kitchens"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "type_of_foods"[0m
+  [1m[35mTypeOfFood Load (0.1ms)[0m  SELECT "type_of_foods".* FROM "type_of_foods"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "preferences"[0m
+  [1m[35mPreference Load (0.1ms)[0m  SELECT "preferences".* FROM "preferences"
+  Rendered recipes/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.208267"], ["updated_at", "2015-11-11 21:29:56.208267"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.210207"], ["updated_at", "2015-11-11 21:29:56.210207"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.212147"], ["updated_at", "2015-11-11 21:29:56.212147"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference_id", 1], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.213508"], ["created_at", "2015-11-11 21:29:56.214544"], ["updated_at", "2015-11-11 21:29:56.214544"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.217214"], ["updated_at", "2015-11-11 21:29:56.217214"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.219127"], ["updated_at", "2015-11-11 21:29:56.219127"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.220893"], ["updated_at", "2015-11-11 21:29:56.220893"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 2], ["type_of_food_id", 2], ["preference_id", 2], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.222350"], ["created_at", "2015-11-11 21:29:56.223365"], ["updated_at", "2015-11-11 21:29:56.223365"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.225777"], ["updated_at", "2015-11-11 21:29:56.225777"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.227582"], ["updated_at", "2015-11-11 21:29:56.227582"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.229395"], ["updated_at", "2015-11-11 21:29:56.229395"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 3], ["type_of_food_id", 3], ["preference_id", 3], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.230749"], ["created_at", "2015-11-11 21:29:56.231727"], ["updated_at", "2015-11-11 21:29:56.231727"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.235907"], ["updated_at", "2015-11-11 21:29:56.235907"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.238772"], ["updated_at", "2015-11-11 21:29:56.238772"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.240480"], ["updated_at", "2015-11-11 21:29:56.240480"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 4], ["type_of_food_id", 4], ["preference_id", 4], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.241826"], ["created_at", "2015-11-11 21:29:56.242847"], ["updated_at", "2015-11-11 21:29:56.242847"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.245242"], ["updated_at", "2015-11-11 21:29:56.245242"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.247062"], ["updated_at", "2015-11-11 21:29:56.247062"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.248916"], ["updated_at", "2015-11-11 21:29:56.248916"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 5], ["type_of_food_id", 5], ["preference_id", 5], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.250343"], ["created_at", "2015-11-11 21:29:56.251348"], ["updated_at", "2015-11-11 21:29:56.251348"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.253762"], ["updated_at", "2015-11-11 21:29:56.253762"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.255531"], ["updated_at", "2015-11-11 21:29:56.255531"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.257363"], ["updated_at", "2015-11-11 21:29:56.257363"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 6], ["type_of_food_id", 6], ["preference_id", 6], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.258758"], ["created_at", "2015-11-11 21:29:56.259784"], ["updated_at", "2015-11-11 21:29:56.259784"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.269528"], ["updated_at", "2015-11-11 21:29:56.269528"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.271249"], ["updated_at", "2015-11-11 21:29:56.271249"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.272896"], ["updated_at", "2015-11-11 21:29:56.272896"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 7], ["type_of_food_id", 7], ["preference_id", 7], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.274170"], ["created_at", "2015-11-11 21:29:56.275121"], ["updated_at", "2015-11-11 21:29:56.275121"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.277840"], ["updated_at", "2015-11-11 21:29:56.277840"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.279766"], ["updated_at", "2015-11-11 21:29:56.279766"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.281566"], ["updated_at", "2015-11-11 21:29:56.281566"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 8], ["type_of_food_id", 8], ["preference_id", 8], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.282926"], ["created_at", "2015-11-11 21:29:56.283949"], ["updated_at", "2015-11-11 21:29:56.283949"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.286493"], ["updated_at", "2015-11-11 21:29:56.286493"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.288493"], ["updated_at", "2015-11-11 21:29:56.288493"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.290401"], ["updated_at", "2015-11-11 21:29:56.290401"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 9], ["type_of_food_id", 9], ["preference_id", 9], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.291825"], ["created_at", "2015-11-11 21:29:56.292890"], ["updated_at", "2015-11-11 21:29:56.292890"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.295451"], ["updated_at", "2015-11-11 21:29:56.295451"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.297407"], ["updated_at", "2015-11-11 21:29:56.297407"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.299400"], ["updated_at", "2015-11-11 21:29:56.299400"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 10], ["type_of_food_id", 10], ["preference_id", 10], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.300953"], ["created_at", "2015-11-11 21:29:56.301974"], ["updated_at", "2015-11-11 21:29:56.301974"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.304497"], ["updated_at", "2015-11-11 21:29:56.304497"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.306320"], ["updated_at", "2015-11-11 21:29:56.306320"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.308036"], ["updated_at", "2015-11-11 21:29:56.308036"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 11], ["type_of_food_id", 11], ["preference_id", 11], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.309814"], ["created_at", "2015-11-11 21:29:56.310819"], ["updated_at", "2015-11-11 21:29:56.310819"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.313505"], ["updated_at", "2015-11-11 21:29:56.313505"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.315167"], ["updated_at", "2015-11-11 21:29:56.315167"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.317128"], ["updated_at", "2015-11-11 21:29:56.317128"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 12], ["type_of_food_id", 12], ["preference_id", 12], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.318720"], ["created_at", "2015-11-11 21:29:56.319746"], ["updated_at", "2015-11-11 21:29:56.319746"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.322660"], ["updated_at", "2015-11-11 21:29:56.322660"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.324559"], ["updated_at", "2015-11-11 21:29:56.324559"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.326232"], ["updated_at", "2015-11-11 21:29:56.326232"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 13], ["type_of_food_id", 13], ["preference_id", 13], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.327588"], ["created_at", "2015-11-11 21:29:56.328629"], ["updated_at", "2015-11-11 21:29:56.328629"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.330960"], ["updated_at", "2015-11-11 21:29:56.330960"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.332810"], ["updated_at", "2015-11-11 21:29:56.332810"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.334788"], ["updated_at", "2015-11-11 21:29:56.334788"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 14], ["type_of_food_id", 14], ["preference_id", 14], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.336158"], ["created_at", "2015-11-11 21:29:56.337142"], ["updated_at", "2015-11-11 21:29:56.337142"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.339535"], ["updated_at", "2015-11-11 21:29:56.339535"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.341283"], ["updated_at", "2015-11-11 21:29:56.341283"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.343257"], ["updated_at", "2015-11-11 21:29:56.343257"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 15], ["type_of_food_id", 15], ["preference_id", 15], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.344814"], ["created_at", "2015-11-11 21:29:56.345853"], ["updated_at", "2015-11-11 21:29:56.345853"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.348548"], ["updated_at", "2015-11-11 21:29:56.348548"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.350902"], ["updated_at", "2015-11-11 21:29:56.350902"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.352738"], ["updated_at", "2015-11-11 21:29:56.352738"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 16], ["type_of_food_id", 16], ["preference_id", 16], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.354120"], ["created_at", "2015-11-11 21:29:56.355114"], ["updated_at", "2015-11-11 21:29:56.355114"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.357486"], ["updated_at", "2015-11-11 21:29:56.357486"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.359227"], ["updated_at", "2015-11-11 21:29:56.359227"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.360943"], ["updated_at", "2015-11-11 21:29:56.360943"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 17], ["type_of_food_id", 17], ["preference_id", 17], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.362247"], ["created_at", "2015-11-11 21:29:56.363190"], ["updated_at", "2015-11-11 21:29:56.363190"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.365470"], ["updated_at", "2015-11-11 21:29:56.365470"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.367182"], ["updated_at", "2015-11-11 21:29:56.367182"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.368904"], ["updated_at", "2015-11-11 21:29:56.368904"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 18], ["type_of_food_id", 18], ["preference_id", 18], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.370253"], ["created_at", "2015-11-11 21:29:56.371215"], ["updated_at", "2015-11-11 21:29:56.371215"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.373514"], ["updated_at", "2015-11-11 21:29:56.373514"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.375176"], ["updated_at", "2015-11-11 21:29:56.375176"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.376913"], ["updated_at", "2015-11-11 21:29:56.376913"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 19], ["type_of_food_id", 19], ["preference_id", 19], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.378224"], ["created_at", "2015-11-11 21:29:56.379210"], ["updated_at", "2015-11-11 21:29:56.379210"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.381576"], ["updated_at", "2015-11-11 21:29:56.381576"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.383292"], ["updated_at", "2015-11-11 21:29:56.383292"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.384958"], ["updated_at", "2015-11-11 21:29:56.384958"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 20], ["type_of_food_id", 20], ["preference_id", 20], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.386299"], ["created_at", "2015-11-11 21:29:56.387333"], ["updated_at", "2015-11-11 21:29:56.387333"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.389724"], ["updated_at", "2015-11-11 21:29:56.389724"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.391483"], ["updated_at", "2015-11-11 21:29:56.391483"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.393376"], ["updated_at", "2015-11-11 21:29:56.393376"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 21], ["type_of_food_id", 21], ["preference_id", 21], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.394702"], ["created_at", "2015-11-11 21:29:56.395664"], ["updated_at", "2015-11-11 21:29:56.395664"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.398120"], ["updated_at", "2015-11-11 21:29:56.398120"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.399907"], ["updated_at", "2015-11-11 21:29:56.399907"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.401696"], ["updated_at", "2015-11-11 21:29:56.401696"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 22], ["type_of_food_id", 22], ["preference_id", 22], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.403127"], ["created_at", "2015-11-11 21:29:56.404268"], ["updated_at", "2015-11-11 21:29:56.404268"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.406747"], ["updated_at", "2015-11-11 21:29:56.406747"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.408550"], ["updated_at", "2015-11-11 21:29:56.408550"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.410267"], ["updated_at", "2015-11-11 21:29:56.410267"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 23], ["type_of_food_id", 23], ["preference_id", 23], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.411603"], ["created_at", "2015-11-11 21:29:56.412623"], ["updated_at", "2015-11-11 21:29:56.412623"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.415148"], ["updated_at", "2015-11-11 21:29:56.415148"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.416872"], ["updated_at", "2015-11-11 21:29:56.416872"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.418548"], ["updated_at", "2015-11-11 21:29:56.418548"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 24], ["type_of_food_id", 24], ["preference_id", 24], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.419917"], ["created_at", "2015-11-11 21:29:56.420886"], ["updated_at", "2015-11-11 21:29:56.420886"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.423243"], ["updated_at", "2015-11-11 21:29:56.423243"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.424948"], ["updated_at", "2015-11-11 21:29:56.424948"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.426635"], ["updated_at", "2015-11-11 21:29:56.426635"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 25], ["type_of_food_id", 25], ["preference_id", 25], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.428020"], ["created_at", "2015-11-11 21:29:56.429019"], ["updated_at", "2015-11-11 21:29:56.429019"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RecipesController#index as HTML
+  Rendered recipes/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" LIMIT 20) subquery_for_count[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by RecipesController#new as HTML
+  Rendered recipes/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.474280"], ["updated_at", "2015-11-11 21:29:56.474280"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.476168"], ["updated_at", "2015-11-11 21:29:56.476168"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.478246"], ["updated_at", "2015-11-11 21:29:56.478246"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Pudim de Leite"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference_id", 1], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.479981"], ["created_at", "2015-11-11 21:29:56.481267"], ["updated_at", "2015-11-11 21:29:56.481267"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{"name"=>"soup", "preference"=>nil}}
+Unpermitted parameter: preference
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered recipes/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "kitchens" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Portuguesa"], ["created_at", "2015-11-11 21:29:56.493125"], ["updated_at", "2015-11-11 21:29:56.493125"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "type_of_foods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2015-11-11 21:29:56.495972"], ["updated_at", "2015-11-11 21:29:56.495972"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "preferences" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Sem gluten"], ["created_at", "2015-11-11 21:29:56.500216"], ["updated_at", "2015-11-11 21:29:56.500216"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipes" ("name", "kitchen_id", "type_of_food_id", "preference_id", "amount", "time_preparation", "difficulty", "ingredients", "preparation", "foto_file_name", "foto_content_type", "foto_file_size", "foto_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Soup"], ["kitchen_id", 1], ["type_of_food_id", 1], ["preference_id", 1], ["amount", 5], ["time_preparation", 45], ["difficulty", "Médio"], ["ingredients", "1 Leite Condensado, 1 lata de Leite Longa Vida, 4 gemas"], ["preparation", "Bata todos os ingredientes no liquidificador, após coloque o\n                 creme em uma forma untada com melado (açúcar derretido com\n                 água) e leve ao banho-maria por 40 minutos. Sirva frio."], ["foto_file_name", "Pudim.JPG"], ["foto_content_type", "image/jpeg"], ["foto_file_size", 2588], ["foto_updated_at", "2015-11-11 21:29:56.501618"], ["created_at", "2015-11-11 21:29:56.502611"], ["updated_at", "2015-11-11 21:29:56.502611"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
