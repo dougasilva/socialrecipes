@@ -1,9 +1,8 @@
-<h1>RECEITAS</h1>
 <div class="col-md-2">
   <div class="row">
     <div class="col-md-12">
       <section id="kitchens">
-        <h3>Cozinhas</h3>
+        <h4>Cozinhas</h4>
         <%if @kitchens.any? %>
           <% @kitchens.each do |kitchen| %>
             <%= link_to kitchen.name, kitchen %><br>
@@ -17,7 +16,7 @@
   <div class="row">
     <div class="col-md-12">
       <section id="type_of_food">
-        <h3>Tipos de Comida</h3>
+        <h4>Tipos de Comida</h4>
         <%if @typeoffoods.any? %>
           <% @typeoffoods.each do |typeoffood| %>
             <%= link_to typeoffood.name, typeoffood %><br>
@@ -31,7 +30,7 @@
   <div class="row">
     <div class="col-md-12">
       <section id="preference">
-        <h3>Preferencias</h3>
+        <h4>Preferencias</h4>
         <%if @preferences.any? %>
           <% @preferences.each do |preference| %>
             <%= link_to preference.name, preference %><br>
@@ -43,17 +42,30 @@
     </div>
   </div>
 </div>
-<div class="col-md-10">
+<div class="col-md-5">
   <section id="recipes">
-    <%if @recipes.any? %>
-      <% @recipes.each do |recipe| %>
-        <%= link_to recipe.name, recipe %><br>
-        <%= recipe.preference.name %><br>
-        <%= recipe.kitchen.name %><br>
-        <%= recipe.difficulty %><br>
+    <h3>Últimas Receitas</h3>
+    <div class="row">
+      <%if @recipes.any? %>
+        <% @recipes.each do |recipe| %>
+        <div class="col-md-4">
+          <%= image_tag recipe.foto.url(:thumb) %><br>
+        </div>
+        <div class="col-md-8">
+          <%= link_to recipe.name, recipe %><br>
+          <label for="preference">Preferencia:</label>
+          <%= recipe.preference.name %><br>
+          <label for="type_of_food">Tipo:</label>
+          <%= recipe.type_of_food.name %><br>
+          <label for="kitchen">Cozinha:</label>
+          <%= recipe.kitchen.name %><br>
+          <label for="difficulty">Dificuldade:</label>
+          <%= recipe.difficulty %><br>
+        </div>
+        <% end %>
+      <% else %>
+        <p>Sem receitas cadastradas.</p>
       <% end %>
-    <% else %>
-      <p>Sem receitas cadastradas.</p>
-    <% end %>
+  </div>
   </section>
 </div>
