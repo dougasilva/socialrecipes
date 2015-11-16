@@ -1,6 +1,16 @@
-<h1>CADASTRAR TIPO DE COMIDA</h1>
+<h3>Cadastrar Tipo de Comida</h3>
 <p class="error"><%= flash[:error] %></p>
-<%= simple_form_for @type_of_food do |f| %>
- <%= f.input :name, label: 'Nome:' %>
- <%= f.button :submit, value: 'Cadastrar Tipo' %>
-<% end %>
+<div class="col-md-4">
+  <%= simple_form_for @type_of_food do |f| %>
+    <div class="panel panel-primary">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            <%= f.input :name, label: 'Nome:', focus: true %>
+            <%= f.button :submit, value: 'Cadastrar' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

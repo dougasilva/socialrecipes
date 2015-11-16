@@ -5,7 +5,7 @@ feature 'Admin create a new kitchen' do
 
     fill_in 'Nome:', with: 'Brasileira'
 
-    click_on 'Cadastrar Cozinha'
+    click_on 'Cadastrar'
 
     expect(page).to have_content 'Brasileira'
   end
@@ -13,7 +13,7 @@ feature 'Admin create a new kitchen' do
   scenario 'unsuccessfully' do
     visit new_kitchen_path
 
-    click_on 'Cadastrar Cozinha'
+    click_on 'Cadastrar'
 
     expect(page).to have_content 'Por favor, verifique os dados obrigatórios'
   end

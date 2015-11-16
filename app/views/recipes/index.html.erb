@@ -1,47 +1,4 @@
-<div class="col-md-2">
-  <div class="row">
-    <div class="col-md-12">
-      <section id="kitchens">
-        <h4>Cozinhas</h4>
-        <%if @kitchens.any? %>
-          <% @kitchens.each do |kitchen| %>
-            <%= link_to kitchen.name, kitchen %><br>
-          <% end %>
-        <% else %>
-          <p>Sem cozinhas cadastradas.</p>
-        <% end %>
-      </section>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <section id="type_of_food">
-        <h4>Tipos de Comida</h4>
-        <%if @typeoffoods.any? %>
-          <% @typeoffoods.each do |typeoffood| %>
-            <%= link_to typeoffood.name, typeoffood %><br>
-          <% end %>
-        <% else %>
-          <p>Sem tipos cadastrados.</p>
-        <% end %>
-      </section>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <section id="preference">
-        <h4>Preferencias</h4>
-        <%if @preferences.any? %>
-          <% @preferences.each do |preference| %>
-            <%= link_to preference.name, preference %><br>
-          <% end %>
-        <% else %>
-          <p>Sem preferencias cadastradas.</p>
-        <% end %>
-      </section>
-    </div>
-  </div>
-</div>
+<%= render 'layouts/rigthmenu' %>
 <div class="col-md-5">
   <section id="recipes">
     <h3>Últimas Receitas</h3>

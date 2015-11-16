@@ -22,6 +22,7 @@ gem 'auto_increment'
 gem 'turbolinks'
 
 gem 'paperclip'
+gem 'paperclip-dropbox'
 
 gem 'bootstrap-sass', '~> 3.3.5'
 
@@ -44,6 +45,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'aws-sdk', '~> 2'
 end
 
 group :development do

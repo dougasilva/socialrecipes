@@ -1,9 +1,20 @@
-<h1>TIPOS DE COMIDA</h1>
-<h2><%= @type_of_food.name %></h2><br>
-
-<% @type_of_food.recipe.each do |recipe| %>
-  <%= link_to recipe.name, recipe %><br>
-  <%= recipe.preference.name %><br>
-  <%= recipe.kitchen.name %><br>
-  <%= recipe.difficulty %><br>
-<% end %>
+<form>
+  <div class="container">
+    <h2>Tipo de Comida</h2>
+    <h3><%= @type_of_food.name %></h3>
+    <div class="col-md-4">
+      <% @type_of_food.recipe.each do |recipe| %>
+        <div class="panel panel-primary">
+          <div class="row">
+            <div class="col-md-12">
+              <%= link_to recipe.name, recipe %><br>
+              <%= recipe.preference.name %><br>
+              <%= recipe.kitchen.name %><br>
+              <%= recipe.difficulty %><br>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</form>

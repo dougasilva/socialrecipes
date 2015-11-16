@@ -1,9 +1,20 @@
-<h1>COZINHAS</h1>
-<h2><%= @kitchen.name %></h2><br>
-
-<% @kitchen.recipe.each do |recipe| %>
-  <%= link_to recipe.name, recipe %><br>
-  <%= recipe.preference.name %><br>
-  <%= recipe.kitchen.name %><br>
-  <%= recipe.difficulty %><br>
-<% end %>
+<form>
+  <div class="container">
+    <h2>Cozinha</h2>
+    <h3><%= @kitchen.name %></h3>
+    <div class="col-md-4">
+      <% @kitchen.recipe.each do |recipe| %>
+        <div class="panel panel-primary">
+          <div class="row">
+            <div class="col-md-12">
+              <%= link_to recipe.name, recipe %><br>
+              <%= recipe.preference.name %><br>
+              <%= recipe.kitchen.name %><br>
+              <%= recipe.difficulty %><br>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</form>

@@ -1,54 +1,29 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/campuscode/workspace/douglas/socialrecipes/app/helpers/application_helper.rb": [
+      "/home/douglas/workspace/socialrecipes/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/campuscode/workspace/douglas/socialrecipes/app/controllers/recipes_controller.rb": [
+      "/home/douglas/workspace/socialrecipes/app/models/kitchen.rb": [
         1,
         1,
-        3,
-        null,
-        null,
-        1,
-        3,
-        3,
-        1,
-        null,
-        2,
-        2,
-        null,
-        null,
-        null,
-        1,
-        3,
-        null,
-        null,
-        1,
-        8,
-        8,
-        8,
-        8,
-        null,
-        null,
-        1,
-        null,
-        1,
-        3,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/campuscode/workspace/douglas/socialrecipes/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
         1,
         null
       ],
-      "/home/campuscode/workspace/douglas/socialrecipes/app/controllers/kitchens_controller.rb": [
+      "/home/douglas/workspace/socialrecipes/app/models/type_of_food.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/douglas/workspace/socialrecipes/app/models/preference.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/douglas/workspace/socialrecipes/app/controllers/recipes_controller.rb": [
         1,
         1,
         2,
@@ -57,7 +32,7 @@
         1,
         2,
         2,
-        1,
+        0,
         null,
         1,
         1,
@@ -65,10 +40,13 @@
         null,
         null,
         1,
-        2,
+        0,
         null,
         null,
         1,
+        0,
+        0,
+        0,
         0,
         null,
         null,
@@ -77,104 +55,39 @@
         1,
         2,
         null,
-        null
-      ],
-      "/home/campuscode/workspace/douglas/socialrecipes/app/models/kitchen.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/home/campuscode/workspace/douglas/socialrecipes/app/models/recipe.rb": [
-        1,
-        1,
         null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/home/campuscode/workspace/douglas/socialrecipes/app/controllers/preferences_controller.rb": [
-        1,
-        1,
-        2,
-        null,
-        null,
-        1,
-        2,
-        2,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        null,
-        1,
-        2,
         null,
         null
       ],
-      "/home/campuscode/workspace/douglas/socialrecipes/app/models/preference.rb": [
+      "/home/douglas/workspace/socialrecipes/app/controllers/application_controller.rb": [
         1,
-        1,
+        null,
+        null,
         1,
         null
       ],
-      "/home/campuscode/workspace/douglas/socialrecipes/app/controllers/type_of_foods_controller.rb": [
-        1,
-        1,
-        2,
-        null,
-        null,
-        1,
-        2,
-        2,
-        1,
-        null,
+      "/home/douglas/workspace/socialrecipes/app/models/recipe.rb": [
         1,
         1,
         null,
         null,
-        null,
         1,
-        2,
         null,
         null,
-        1,
-        0,
+        null,
+        null,
         null,
         null,
         1,
         null,
-        1,
-        2,
         null,
-        null
-      ],
-      "/home/campuscode/workspace/douglas/socialrecipes/app/models/type_of_food.rb": [
+        null,
         1,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1447277396
+    "timestamp": 1447875254
   }
 }

@@ -1,10 +1,22 @@
-<h1>COZINHAS</h1>
-<section id="kitchens">
-  <% if @kitchens.any? %>
-    <% @kitchens.each do |kitchen| %>
-      <%= link_to kitchen.name, kitchen %><br>
-    <% end %>
-  <% else %>
-    <p>Sem cozinhas cadastradas.</p>
-  <% end %>
-</section>
+<form class="form-horizontal">
+  <div class="container">
+    <h3>Cozinhas</h3>
+    <section id="kitchens">
+      <% if @kitchens.any? %>
+      <div class="col-md-4">
+        <% @kitchens.each do |kitchen| %><br>
+        <div class="panel panel-primary">
+          <div class="row">
+            <div class="col-md-12">
+              <%= link_to kitchen.name, kitchen %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% else %>
+        <p>Sem cozinhas cadastradas.</p>
+      <% end %>
+    </section>
+  </div>
+</form>

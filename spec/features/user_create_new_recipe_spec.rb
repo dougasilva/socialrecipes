@@ -22,7 +22,7 @@ feature 'User insert a new recipe' do
                                      derretido com água) e leve ao banho-maria
                                      por 40 minutos. Sirva frio.'
     attach_file('Selecione uma foto:', 'spec/fotos/Pudim.JPG')
-    click_on 'Cadastrar Receita'
+    click_on 'Cadastrar'
 
     expect(page).to have_content 'Pudim de Leite'
     expect(page).to have_content 'Portuguesa'
@@ -44,7 +44,7 @@ feature 'User insert a new recipe' do
   scenario 'unsuccessfully' do
     visit new_recipe_path
 
-    click_on 'Cadastrar Receita'
+    click_on 'Cadastrar'
 
     expect(page).to have_content 'Por favor, verifique os dados obrigatórios'
   end

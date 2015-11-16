@@ -1,19 +1,33 @@
-<h1>CADASTRAR RECEITA</h1>
-<p class="error"><%= flash[:error] %></p>
-<%= simple_form_for @recipe, html: {multipart: true} do |f| %>
- <%= f.input :name, label: 'Receita:' %>
- <%= f.association :kitchen, label: 'Cozinha:', label_method: :name,
-                    value_method: :id %>
- <%= f.association :type_of_food, label: 'Tipo de Comida:', label_method: :name,
-                    value_method: :id %>
- <%= f.association :preference, label: 'Preferência de Comida:',
-                    label_method: :name, value_method: :id %>
- <%= f.input :amount, label: 'Serve:' %>
- <%= f.input :time_preparation, label: 'Tempo de Preparo:' %>
- <%= f.input :difficulty, collection: ['Difícil', 'Médio', 'Fácil'],
-             label: 'Dificuldade:' %>
- <%= f.input :ingredients, label: 'Ingredientes:' %>
- <%= f.input :preparation, label: 'Passo a Passo:' %>
- <%= f.input :foto, label: 'Selecione uma foto:', as: :file %>
- <%= f.button :submit, value: 'Cadastrar Receita' %>
-<% end %>
+<form>
+  <div class="container">
+    <h3>Cadastrar Receita</h3>
+    <p class="error"><%= flash[:error] %></p>
+    <div class="col-md-8">
+      <%= simple_form_for @recipe, html: {multipart: true} do |f| %>
+      <div class="panel panel-primary">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="form-group">
+              <%= f.input :name, label: 'Receita:' %>
+              <%= f.association :kitchen, label: 'Cozinha:', label_method: :name,
+                                 value_method: :id %>
+              <%= f.association :type_of_food, label: 'Tipo de Comida:',
+                                label_method: :name, value_method: :id %>
+              <%= f.association :preference, label: 'Preferência de Comida:',
+                                label_method: :name, value_method: :id %>
+              <%= f.input :amount, label: 'Serve:' %>
+              <%= f.input :time_preparation, label: 'Tempo de Preparo:' %>
+              <%= f.input :difficulty, collection: ['Difícil', 'Médio', 'Fácil'],
+                          label: 'Dificuldade:' %>
+              <%= f.input :ingredients, label: 'Ingredientes:' %>
+              <%= f.input :preparation, label: 'Passo a Passo:' %>
+              <%= f.input :foto, label: 'Selecione uma foto:', as: :file %>
+              <%= f.button :submit, value: 'Cadastrar Receita' %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</form>

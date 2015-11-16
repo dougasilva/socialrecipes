@@ -4,7 +4,7 @@ feature 'Admin create new preference of food' do
     visit new_preference_path
     fill_in 'Nome:', with: 'Sem gluten'
 
-    click_on 'Cadastrar Preferência'
+    click_on 'Cadastrar'
 
     expect(page).to have_content 'Sem gluten'
   end
@@ -12,7 +12,7 @@ feature 'Admin create new preference of food' do
   scenario 'Unsuccessffuly' do
     visit new_preference_path
 
-    click_on 'Cadastrar Preferência'
+    click_on 'Cadastrar'
 
     expect(page).to have_content 'Por favor, verifique os dados obrigatórios'
   end
